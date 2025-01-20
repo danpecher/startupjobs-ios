@@ -7,18 +7,27 @@ class JobsListCoordinator: Coordinator {
         case jobDetail(id: Int)
     }
 
-    var navigationController: UINavigationController
+    lazy var navigationController: UINavigationController? = {
+        let viewController = UINavigationController()
+        
+        viewController.navigationBar.prefersLargeTitles = true
+        
+        return viewController
+    }()
+    
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-    
     func start() {
-        let viewModel = JobsListViewModel()
+        PreviewApiService.previewData = try! Data(
+            contentsOf: Bundle.main.url(forResource: "fakejobs", withExtension: "json")!
+        )
+        
+        let viewModel = JobsListViewModel(
+            apiService: PreviewApiService() // ApiService(urlSession: URLSession.shared)
+        )
         
         viewModel.events.sink { [weak self] event in
             switch event {
@@ -28,8 +37,14 @@ class JobsListCoordinator: Coordinator {
         }
         .store(in: &cancellables)
         
-        navigationController.pushViewController(
-            UIHostingController(rootView: JobsList(viewModel: viewModel)),
+        let hostingController = UIHostingController(
+            rootView: JobsList(viewModel: viewModel)
+        )
+        
+        hostingController.title = "Jobs"
+        
+        navigationController?.pushViewController(
+            hostingController,
             animated: false
         )
     }
@@ -39,7 +54,7 @@ class JobsListCoordinator: Coordinator {
         switch route {
         case .jobDetail(let id):
             let viewController = UIHostingController(rootView: Text("Job detail: \(id)"))
-            navigationController.pushViewController(viewController, animated: true)
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 }
