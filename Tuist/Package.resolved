@@ -1,0 +1,15 @@
+{
+  "originHash" : "22845406ba27948becfa114220b6e12ba6bfc9e3711fe1993e6f0b3c9d172dc5",
+  "pins" : [
+    {
+      "identity" : "mocker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/WeTransfer/Mocker",
+      "state" : {
+        "revision" : "95fa785c751f6bc40c49e112d433c3acf8417a97",
+        "version" : "3.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}

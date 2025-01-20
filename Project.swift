@@ -11,6 +11,16 @@ let project = Project(
             bundleId: "io.tuist.startupjobs",
             infoPlist: .extendingDefault(
                 with: [
+                    "UIApplicationSceneManifest": [
+                        "UISceneConfigurations": [
+                            "UIWindowSceneSessionRoleApplication": [
+                                [
+                                    "UISceneConfigurationName": "Default Configuration",
+                                    "UISceneDelegateClassName": "$(PRODUCT_MODULE_NAME).SceneDelegate",
+                                ]
+                            ]
+                        ]
+                    ],
                     "UILaunchScreen": [
                         "UIColorName": "",
                         "UIImageName": "",
@@ -29,7 +39,10 @@ let project = Project(
             infoPlist: .default,
             sources: ["startupjobs/Tests/**"],
             resources: [],
-            dependencies: [.target(name: "startupjobs")]
+            dependencies: [
+                .target(name: "App"),
+                .external(name: "Mocker")
+            ]
         ),
     ]
 )
