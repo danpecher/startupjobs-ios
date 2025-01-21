@@ -26,7 +26,8 @@ class JobsListCoordinator: Coordinator {
         )
         
         let viewModel = JobsListViewModel(
-            apiService: PreviewApiService() // ApiService(urlSession: URLSession.shared)
+            apiService: PreviewApiService()
+//            apiService: ApiService(urlSession: URLSession.shared)
         )
         
         viewModel.events.sink { [weak self] event in

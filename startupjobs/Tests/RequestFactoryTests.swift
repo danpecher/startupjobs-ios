@@ -1,19 +1,14 @@
 import Foundation
-import XCTest
+import Testing
 @testable import App
 
-final class RequestFactoryTests: XCTestCase {
-    func testCreatesCorrectUrl() {
+struct RequestFactoryTests {
+    @Test
+    func createsCorrectUrl() {
         let subject = RequestFactory()
         
-        XCTAssertEqual(
-            subject.create(from: AppRoutes.jobsList()).url!,
-            URL(string: "https://www.startupjobs.cz/api/offers")!
-        )
+        #expect(subject.create(from: AppRoutes.jobsList()).url! == URL(string: "https://www.startupjobs.cz/api/offers")!)
         
-        XCTAssertEqual(
-            subject.create(from: AppRoutes.jobsList(page: 2)).url!,
-            URL(string: "https://www.startupjobs.cz/api/offers?page=2")!
-        )
+        #expect(subject.create(from: AppRoutes.jobsList(page: 2)).url! == URL(string: "https://www.startupjobs.cz/api/offers?page=2")!)
     }
 }

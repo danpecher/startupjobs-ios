@@ -1,16 +1,5 @@
 import SwiftUI
 
-struct JobsListItem: View {
-    let listing: JobListing
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(listing.name)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
-
 struct JobsList: View {
     let viewModel: JobsListViewModel
     
@@ -22,19 +11,34 @@ struct JobsList: View {
                     EmptyView()
                 case .loading:
                     Text("Loading")
-                case .failed(let error):
+                case let .failed(error, _):
                     Text(error.localizedDescription)
-                case .loaded(let items):
-                    ForEach(items) { job in
-                        JobsListItem(listing: job)
-                            .padding(.horizontal)
-                            .padding(.vertical, 8)
-                    }
+                case .loaded(let items), .loadingMore(let items):
+                    list(items: items)
                 }
             }
         }
+        .refreshable {
+            await viewModel.load()
+        }
         .task {
             await viewModel.load()
+        }
+    }
+    
+    @ViewBuilder
+    private func list(items: [JobListing]) -> some View {
+        ForEach(Array(items.enumerated()), id: \.1.id) { index, job in
+            JobsListItem(listing: job)
+                .padding(.horizontal)
+                .padding(.vertical, 8)
+        }
+        
+        if !viewModel.jobs.reachedEnd {
+            ProgressView()
+                .onAppear {
+                    viewModel.loadMore()
+                }
         }
     }
 }
@@ -43,7 +47,7 @@ struct JobsList: View {
     let _ = PreviewApiService.previewData = try! Data(
         contentsOf: Bundle.main.url(forResource: "fakejobs", withExtension: "json")!
     )
-        
+    
     JobsList(
         viewModel: JobsListViewModel(
             apiService: PreviewApiService(delay: 1)

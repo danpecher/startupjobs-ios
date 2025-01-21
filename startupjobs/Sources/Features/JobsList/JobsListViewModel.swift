@@ -10,7 +10,7 @@ class JobsListViewModel {
     
     let apiService: ApiServicing
     
-    private(set) var jobs: DataLoader<[JobListing]>!
+    private(set) var jobs: DataLoader<JobListing>!
     
     init(apiService: ApiServicing) {
         self.apiService = apiService
@@ -27,10 +27,21 @@ class JobsListViewModel {
         await jobs.load()
     }
     
-    func fetchJobs() async throws -> [JobListing] {
-        let result: ApiResult<[JobListing]> = try await apiService.request(AppRoutes.jobsList())
+    func loadMore() {
+        Task {
+            await jobs.loadMore()
+        }
+    }
+    
+    private func fetchJobs(page: Int) async throws -> DataResult<[JobListing]> {
+        let result: ApiResult<[JobListing]> = try await apiService.request(
+            AppRoutes.jobsList(page: page)
+        )
         
-        return result.resultSet
+        return DataResult(
+            data: result.resultSet,
+            hasMore: result.paginator.current < result.paginator.max
+        )
     }
     
     func openJobDetaial(id: Int) {
