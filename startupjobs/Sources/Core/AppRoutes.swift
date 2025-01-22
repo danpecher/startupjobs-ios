@@ -1,7 +1,7 @@
 import Foundation
 
 enum AppRoutes: Route {
-    case jobsList(page: Int? = nil)
+    case jobsList(page: Int? = nil, filters: [(String, String)] = [])
     
     var path: String {
         switch self {
@@ -12,12 +12,16 @@ enum AppRoutes: Route {
     
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .jobsList(let page):
+        case let .jobsList(page, filters):
             guard let page else {
                 return nil
             }
             
-            return [URLQueryItem(name: "page", value: String(page))]
+            return [
+                URLQueryItem(name: "page", value: String(page))
+            ] + filters.map({ key, value in
+                URLQueryItem(name: key, value: value)
+            })
         }
     }
     

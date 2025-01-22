@@ -9,10 +9,12 @@ class ApiService: ApiServicing {
     }
     
     func request<T: Decodable>(_ route: Route) async throws -> ApiResult<T> {
+        print(requestFactory.create(from: route))
+        
         let (data, response) = try await urlSession.data(for: requestFactory.create(from: route))
         
         if let response = response as? HTTPURLResponse {
-            print(response)
+//            print(String(data: data, encoding: .utf8))
         }
         
         return try JSONDecoder().decode(ApiResult<T>.self, from: data)

@@ -11,7 +11,7 @@ struct ApiResult<T: Decodable>: Decodable {
     let paginator: Paginator
 }
 
-struct JobListing: Codable, Identifiable {
+struct JobListing: Codable, Identifiable, Hashable {
     let id: Int
     let name: String
     let description: String

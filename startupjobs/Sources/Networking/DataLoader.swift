@@ -14,9 +14,9 @@ struct DataResult<T> {
 }
 
 @Observable
-class DataLoader<T> {
+class DataLoader<T: Hashable> {
     @ObservationIgnored
-    var dataTask: (Int) async throws -> DataResult<[T]>
+    private var dataTask: (Int) async throws -> DataResult<[T]>
     
     private(set) var page = 1
     
@@ -30,6 +30,7 @@ class DataLoader<T> {
     
     func load() async {
         do {
+            page = 1
             state = .loading
             
             let result = try await dataTask(page)
@@ -51,7 +52,7 @@ class DataLoader<T> {
             state = .loadingMore(existingItems)
             let result = try await dataTask(page)
             reachedEnd = !result.hasMore
-            state = .loaded(existingItems + result.data)
+            state = .loaded((existingItems + result.data).removingDuplicates())
         } catch {
             state = .failed(error, existingItems)
         }

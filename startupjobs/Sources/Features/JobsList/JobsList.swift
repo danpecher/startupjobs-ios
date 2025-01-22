@@ -6,6 +6,9 @@ struct JobsList: View {
     var body: some View {
         ScrollView {
             LazyVStack {
+                FiltersToolbar()
+                    .environmentObject(viewModel)
+                
                 switch viewModel.jobs.state {
                 case .initial:
                     EmptyView()
