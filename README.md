@@ -10,12 +10,13 @@ Technologies used:
 
 WIP TODO list:
 - [x]  Networking layer
-- [ ]  Basic list with infinite scroll
+- [x]  Basic list with infinite scroll
+- [x]  Filters sheet
+- [x]  Filter data
+- [x]  Display active filters
+- [ ]  Load dynamic filter values from api
 - [ ]  Job detail
 - [ ]  Group by date (Today, yesterday, etc.)
-- [ ]  Filters sheet
-- [ ]  Filter data
-- [ ]  Display active filters
 - [ ]  Search by keywords
 - [ ]  Refresh data if stale (view x new jobs)
 - [ ]  Full screen tiktok style scroll (experimental) – switch between list / fullscreen
