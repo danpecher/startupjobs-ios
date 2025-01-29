@@ -1,7 +1,7 @@
 import ProjectDescription
 // import ProjectDescriptionHelpers
 
-let deploymentTarget: SettingValue = "18.0"
+let deploymentTarget: SettingValue = "17.0"
 
 let frameworks: [(String, [TargetDependency])] = [
     ("AppFramework", []),
