@@ -40,7 +40,7 @@ private extension JobsListCoordinator {
         
         let apiService: ApiServicing = useLocalData
         ? PreviewApiService(previewData: try! Data(
-            contentsOf: Bundle.main.url(forResource: "fakejobs", withExtension: "json")!
+            contentsOf: Bundle.main.url(forResource: "cachedjobs", withExtension: "json")!
         ))
         : ApiService(
             baseUrl: "https://www.startupjobs.cz/api",

@@ -73,7 +73,7 @@ struct JobsList: View {
             filters: [],
             apiService: PreviewApiService(
                 previewData: try! Data(
-                    contentsOf: Bundle.main.url(forResource: "fakejobs", withExtension: "json")!
+                    contentsOf: Bundle.main.url(forResource: "cachedjobs", withExtension: "json")!
                 ),
                 delay: 1
             )
