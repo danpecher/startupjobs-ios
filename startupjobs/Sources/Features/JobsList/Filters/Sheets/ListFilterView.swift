@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ListFilterView: View {
-    @StateObject var filter: ListFilter
+    @State var filter: ListFilter
     
     var body: some View {
         List(filter.options) { option in

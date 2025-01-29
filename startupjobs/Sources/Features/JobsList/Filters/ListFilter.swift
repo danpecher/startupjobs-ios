@@ -1,9 +1,11 @@
 import SwiftUI
+import Observation
 
-class ListFilter: Filter, ObservableObject {
+@Observable
+class ListFilter: Filter {
     var title: String
     var key: String
-    @Published var value: Set<String>
+    var value: Set<String>
     var options: [FilterOption]
 
     var hasValues: Bool {
