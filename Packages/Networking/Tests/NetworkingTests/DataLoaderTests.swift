@@ -26,7 +26,7 @@ struct DataLoaderTests {
         
         await subject.load()
         
-        #expect(subject.state.isFailure)
+        #expect(subject.state.value.isFailure)
     }
     
     @Test
@@ -40,7 +40,7 @@ struct DataLoaderTests {
         
         await subject.load()
         
-        #expect(subject.state.isLoaded)
+        #expect(subject.state.value.isLoaded)
     }
     
     @Test
@@ -107,7 +107,7 @@ struct DataLoaderTests {
         await subject.load()
         await subject.loadMore()
 
-        guard case let .loaded(data) = subject.state else {
+        guard case let .loaded(data) = subject.state.value else {
             Issue.record()
             return
         }

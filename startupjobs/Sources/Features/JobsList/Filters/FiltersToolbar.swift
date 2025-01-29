@@ -82,12 +82,7 @@ private extension FiltersToolbar {
 #Preview {
     VStack {
         FiltersToolbar(filters: [], didUpdateFilters: {})
-            .environmentObject(
-                JobsListViewModel(
-                    filters: [],
-                    apiService: PreviewApiService(previewData: nil)
-                )
-            )
+
         Spacer()
     }
 }

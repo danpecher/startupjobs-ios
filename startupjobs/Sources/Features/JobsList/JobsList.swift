@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct JobsList: View {
-    let viewModel: JobsListViewModel
+    @StateObject var viewModel: JobsListViewModel
     
     var body: some View {
         VStack {
@@ -21,9 +21,8 @@ struct JobsList: View {
                             await viewModel.load()
                         }
                     })
-                    .environmentObject(viewModel)
                     
-                    switch viewModel.jobs.state {
+                    switch viewModel.state {
                     case .initial:
                         EmptyView()
                     case .loading:
@@ -58,7 +57,7 @@ struct JobsList: View {
             .tint(.black)
         }
         
-        if !viewModel.jobs.reachedEnd {
+        if !viewModel.reachedEnd {
             ProgressView()
                 .onAppear {
                     viewModel.loadMore()

@@ -1,25 +1,24 @@
-import Observation
+import Combine
 
-@Observable
 public class DataLoader<T: Hashable> {
     /// - Parameter page: The page number to fetch
     typealias DataTask = (_ page: Int) async throws -> DataResult<[T]>
     
-    @ObservationIgnored
     /// Provide a function that fetches data
     private var dataTask: DataTask
     
-    private(set) var page = 1
-    
-    public private(set) var state: DataState<[T]> = .initial
-    
     public var currentData: [T]? {
-        guard case let .loaded(t) = state else {
+        guard case let .loaded(t) = state.value else {
             return nil
         }
         
         return t
     }
+    
+    // MARK: - State variables
+    public private(set) var state = CurrentValueSubject<DataState<[T]>, Never>(.initial)
+    
+    private(set) var page = 1
     
     public private(set) var reachedEnd = false
     
@@ -30,30 +29,30 @@ public class DataLoader<T: Hashable> {
     public func load() async {
         do {
             page = 1
-            state = .loading
+            state.send(.loading)
             
             let result = try await dataTask(page)
             reachedEnd = !result.hasMore
-            state = .loaded(result.data)
+            state.send(.loaded(result.data))
         } catch {
-            state = .failed(error)
+            state.send(.failed(error))
         }
     }
     
     public func loadMore() async {
-        guard !reachedEnd, case let .loaded(existingItems) = state else {
+        guard !reachedEnd, case let .loaded(existingItems) = state.value else {
             return
         }
         
         page += 1
         
         do {
-            state = .loadingMore(existingItems)
+            state.send(.loadingMore(existingItems))
             let result = try await dataTask(page)
             reachedEnd = !result.hasMore
-            state = .loaded(existingItems + result.data)
+            state.send(.loaded(existingItems + result.data))
         } catch {
-            state = .failed(error, existingItems)
+            state.send(.failed(error, existingItems))
         }
     }
 }

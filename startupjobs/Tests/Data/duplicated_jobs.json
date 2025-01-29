@@ -1,0 +1,174 @@
+{
+    "resultSet": [
+        {
+            "id": 72061,
+            "name": "🧑‍💻 Zkušený DevOps vývojář– Buď součástí rostoucího TECH startupu 🚀",
+            "description": "<p>Hledáme zkušeného DevOps inženýra, který má chuť přidat se do našeho <a href=\"https://www.appmixer.com/\" target=\"_blank\" rel=\"noreferrer noopener\">tech startupu s globální ambicí</a> (pomáháme SaaSovým firmám řešit AI agenty, integrace a automatizaci efektivněji).</p><ul><li id=\"isPasted\">Máš bohaté zkušenosti v oblasti DevOps, zejména s Kubernetes, AWS, GitOps, Ansible, Helm, Terraform and Github Actions?</li><li id=\"isPasted\">Chceš se učit ty nejnovější technologie a podílet se na vývoji platformy pro tvorbu AI agentů?</li><li>Chceš být součástí ambiciózního startupu a získat benefity, které s tím souvisí – práce odkud chceš, kooperace s motitovaným týmem, flexibilní pracovní doba, možnost raketového kariérního růstu?</li></ul><p>Client IO, firma stojící za softwarovými produkty <a href=\"https://www.appmixer.com/\" target=\"_blank\" rel=\"noopener\">Appmixer</a> a <a href=\"https://www.jointjs.com/\" target=\"_blank\" rel=\"noopener\">JointJS</a>, je jednou z 50 nejrychleji rostoucích společností v České republice. Obsluhujeme více než 1000 firemních klientů po celém světě (včetně gigantů jako jsou IBM, Boeing, BMW, AirBnB, UIPath a mnoho dalších). Chceme růst dál a budeme rádi, když porosteš s námi! 🚀</p><h3>Čemu se u nás budeš věnovat?</h3><ul><li>Design, implementace a správa CI/CD pipelines pomocí Github Actions, Jenkins a dalších nástrojů pro automatizaci.</li><li>Nasazení, konfigurace a správa systémů v Kubernetes a OpenShift s důrazem na vysokou dostupnost a škálovatelnost.</li><li>Práce s Kubernetes pro orchestraci kontejnerových aplikací s důrazem na efektivní nasazení a provoz.</li><li>Pomoc při přechodu části platformy do AWS.</li><li>Údržba a optimalizace serverů a systémů založených na Linuxu (výkon a bezpečnost jsou klíčové).</li><li>Spolupráce s týmy napříč firmou a návrh vhodných DevOps řešení dle potřeb.</li><li>Monitorování výkonu systému v NewRelic, jeho optimalizace a řešení systémových problémů.</li><li>Zajištění souladu s normami ochrany dat a soukromí.</li><li>Vytváření, správa a dokumentace on-premise instalačních balíčků (helm, terraform, operators).</li><li>Podpora našim zákazníkům s instalací těchto balíčků.</li><li>Orientace v DevOps trendech a jejich začlenění do naší infrastruktury.</li></ul><h3>Co jsou Tvé \"must-haves\"?</h3><ul><li>Bakalářský titul v oboru informatiky, informační technologie nebo příbuzném oboru.</li><li>Bohaté zkušenosti v oblasti DevOps, zejména s Kubernetes, AWS a Github Actions.</li><li>Zkušenost s OpenShift je výhodou.</li><li>Hluboká znalost síťové infrastruktury a systémové bezpečnosti.</li><li>Znalost programovacích jazyků jako jsou Python nebo Bash.</li><li id=\"isPasted\">Znalost NoSQL, Redis, MongoDB, RabbitMQ a ElasticSearch je výhodou.</li><li>Zkušenosti s GIT.</li><li>Důslednost a schopnost samostatně řešit problémy.</li><li>Schopnost pracovat v rychle se měnícím prostředí.</li><li>Perfektní schopnost komunikace v AJ (psanou i mluvenou formou).</li></ul><h3>Čím bys výrazně zvýšil/a své šance být součástí našeho startupu?</h3><ul><li>Znalost správy databází.</li><li>Porozumění architektuře mikroslužeb a RESTful API.</li><li>Znalost JavaScriptu a NodeJS.</li></ul><h3>Co naopak nabízíme my?</h3><ul><li>Možnost pracovat na produktu, který používají firmy z celého světa.</li><li>Práci s novými technologiemi (no kiddin').</li><li>Přátelské prostředí plné motivovaných profesionálů.</li><li>Multijazyčné prostředí, ve kterém své komunikační schopnosti trénuješ denně.</li><li>Možnost pracovat z našich kanceláří na Karlíně či pláže, chalupy, co-workingu... zkrátka odkudkoli chceš.</li><li>Motivační finanční ohodnocení.</li><li>Flexibilní pracovní dobu.</li><li>A to není vše!</li></ul><h3>Proč bys měl/a věnovat svůj čas právě Appmixeru?</h3><p>Jsme tým inovátorů s chutí učit se nové technologie a vytvářet softwarové produkty, které nadchnou naše klienty. Nadšení v nich dnes úspěšně vzbuzujeme technologií, která jim pomáhá řešit jejich AI agentz, integrační a automatizační výzvy efektivněji. Pomocí Appmixeru mohou softwarové společnosti obohatit své produkty o pokročilé funkce jako jsou autonomní AI agenti, integrační marketplace či no-code prostředí pro automatizaci procesů a propojení s aplikacemi třetích stran.</p><p>Kromě Appmixeru jsme úspěšně vyvinuli JavaScriptovou knihovnu pro tvorbu diagramů (<a href=\"https://www.jointjs.com/\" target=\"_blank\" rel=\"noreferrer noopener\">JointJS</a>), která je používána developery z celého světa. Mezi své klienty řadíme firmy jako jsou IBM, Boeing, Oracle, AirBnB či NATO.</p><p>Toho všeho jsme byli schopni s týmem do 20 lidí, které spojuje vize a chuť měnit věci k lepšímu. Jestli chceš být součástí této jízdy, ozvi se! ✌️</p><p>Mimochodem, o našem příběhu se můžete dočíst na CzechCrunch: https://cc.cz/pomahaji-firmam-programovat-bez-znalosti-kodu-nastroje-ceskeho-client-io-maji-v-ibm-i-nato/</p>",
+            "url": "/nabidka/72061/zkuseny-devops-inzenyr-bud-soucasti-rostouciho-tech-startupu",
+            "company": "client IO",
+            "companyType": "growth",
+            "mainAreaName": "DevOps",
+            "imageUrl": "https://images-assets.startupjobs.cz/LOGO/1080/3KADF4IWVGLEclient-io-logo-github144441809158.png",
+            "locations": "Praha",
+            "shifts": "Part-time, Full-time",
+            "areaSlugs": [
+                "vyvoj",
+                "vyvoj/devops"
+            ],
+            "areaNames": [
+                "Vývoj",
+                "DevOps"
+            ],
+            "seniorities": [
+                "senior"
+            ],
+            "benefits": [
+                5,
+                6,
+                19,
+                20,
+                29,
+                30,
+                31,
+                32,
+                42,
+                46,
+                50
+            ],
+            "collaborations": "Freelance, Pracovní smlouva, On-site",
+            "isHot": true,
+            "isRemote": true,
+            "hasUserSeen": false,
+            "hasUserLiked": false,
+            "hasUserApplied": false,
+            "isTop": true,
+            "isImported": false,
+            "coverImageUrl": "https://images-assets.startupjobs.cz/COVER/1080/5a6028c45f1e59716991ed5d346a0b62.png",
+            "companyAreas": [
+                "Technologie"
+            ],
+            "isStartup": false,
+            "salary": null
+        },
+        {
+            "id": 20591,
+            "name": "🧰 PHP developer",
+            "description": "<h3><span style=\"background:white;\">O CDN77</span></h3><p><span style=\"background:white;\" lang=\"en-GB\">Jsme česká technologická firma zajišťující rychlé načítání obsahu největších světových webů a aplikací. Skrz</span><span style=\"background:white;\" lang=\"cs\">&nbsp;</span><a href=\"https://www.cdn77.com/\"><span style=\"background:white;\" lang=\"en-GB\">naši CDN</span></a><span style=\"background:white;\" lang=\"cs\">&nbsp;</span><span style=\"background:white;\" lang=\"en-GB\">a servery po celém světě proudí 5 % světového internetu. Řadíme se tak mezi TOP 5 CDN na světě. Naše služby využívají společnosti jako Udemy, ESL Gaming, European Space Agency, Factorio a stovky dalších. Věříme kvalitním službám a tomu, že nejlepším investorem je spokojený zákazník a nejlepší investicí zase spokojený zaměstnanec. Lidem u nás dáváme důvěru, volné ruce a prostor dělat na ultra zajímavých projektech a technologiích, co mají reálný dopad.</span></p><p><span style=\"background:white;\" lang=\"en-GB\">Chceš o nás vědět víc? Podívej se na</span><span style=\"background:white;\" lang=\"cs\">&nbsp;</span><a href=\"http://cdn77.jobs/\"><span style=\"background:white;\" lang=\"en-GB\">cdn77.jobs</span></a><span style=\"background:white;\" lang=\"en-GB\">.</span></p><p><br></p><h3 id=\"isPasted\">Co očekáváme?</h3><ul><li>Logické a analytické myšlení, nadšení pro automatizaci a řešení neřešitelného</li><li>Znalost PHP, SQL</li><li>Zkušenost s alespoň jedním PHP frameworkem (DI, request-response lifecycle) – nejlépe Symfony</li><li>Výhodou je znalost Doctrine ORM, PostgreSQL, PHPUnit</li><li>Vše ostatní tě naučíme ;-)</li></ul><h3><br></h3><h3><strong>Na čem pracujeme?</strong></h3><p>Vyvíjíme jak aplikace používané zákazníky, tak i interní systémy, které jsou klíčové pro běh našich služeb. Vše stavíme na PHP (verze 8.3) a Symfony (verze 7) komponentách. Nejsme čuňata a chceme to dělat dobře. Bez review nebo statické analýzy a coding standards se tak neobejdeme (a ani nechceme). Deploy máme všude zautomatizovaný přes Gitlab CI. Spíš než rigidní zadání u nás uslyšíš: <em>„Máme tady tenhle problém, zkus ho vyřešit.“</em></p><p>Výběr nejdůležitějších projektů:</p><ul><li><strong>API</strong> – provozujeme veřejné REST API (OpenAPI v3) a interní GraphQL API, které musí odbavovat tisíce požadavků každou minutu.</li><li><strong>Monitoring&nbsp;</strong>– je střed celé firmy. Každou minutu vyhodnocujeme 12 milionů naměřených hodnot z 30 tisíc serverů. Jako základ používáme Prometheus, ke kterému máme napsanou vlastní aplikaci.&nbsp;</li><li><strong>Klientská aplikace client.cdn77.com</strong> – není nic důležitější než spokojený klient. K tomu mu pomáhá do detailu promyšlený web pro správu jeho CDN.</li><li><strong>Analýza síťových toků</strong> – odbavit terabity dat vyžaduje detailní informace o trafficu. Na zvládnutí takového objemu dat používáme Clickhouse a Kafku.</li></ul><h3><br></h3><h3><strong>Jak pracujeme?</strong></h3><p>Pracujeme bez svazujících pravidel. Dáváme velký důraz na samostatnost a osobní i pracovní svobodu. Každodenní <strong>dopolední standup</strong> je jediný pevný bod, který bys měl/a dodržovat, ať už osobně ve vile, nebo přes Slack. Do kanceláře chodíme všichni alespoň třikrát týdně.</p><p>Zpracování úkolu obecně sestává z těchto kroků:</p><ol><li>Vybereš si, na čem chceš pracovat, nebo dostaneš zadání během měsíčního plánování.&nbsp;</li><li>Po dokončení úkolu otevřeš Merge Request v GitLabu, CI ti zkontroluje kód a proběhne code review.</li><li>Nasazení do produkce je pak brnkačka – všechno máme zautomatizované přes CD, takže stačí merge do masteru.&nbsp;</li></ol><p>Během práce máš k dispozici kolegy, kteří vždy rádi poradí. Stejně tak spolupracujeme s grafiky, frontend developery a dalšími specialisty, takže pokud nechceš, nemusíš fušovat do jiného řemesla. Klademe důraz na časté upgrady verzí závislostí v projektech. Nebudeš tedy pracovat s vykopávkami nad PHP 5.</p><p><br></p><h3><span>Co nabízíme?</span></h3><ul><li id=\"isPasted\"><!--EndFragment--><span lang=\"en-GB\"><strong>Peníze</strong></span><span lang=\"cs\">&nbsp;</span><span lang=\"en-GB\">odpovídající zkušenostem, výkonu a očekávání</span></li><li id=\"isPasted\"><span><strong>Kolektiv mladých a talentovaných lidí,</strong>&nbsp;</span><span>od kterých se můžeš neustále učit</span></li><li id=\"isPasted\"><span lang=\"en-GB\"><strong>0 corporate bullshit</strong></span><span lang=\"cs\"><strong>&nbsp;</strong></span><span lang=\"en-GB\">– důvěra, svoboda, žádná práce dělaná s cílem uspokojit investory nebo management</span></li><li id=\"isPasted\"><span lang=\"en-GB\">Zázemí v jedné z našich prvorepublikových</span><span lang=\"cs\">&nbsp;</span><span lang=\"en-GB\"><strong>vil se zahradou</strong></span><span lang=\"cs\">&nbsp;</span><span lang=\"en-GB\">na Vinohradech (a navíc dog-friendly)</span></li><li id=\"isPasted\"><span lang=\"en-GB\">Free</span><span lang=\"cs\">&nbsp;<strong>snídaně a obědy</strong></span><span lang=\"en-GB\">, ovoce, svačiny, fresh džusy, ... na cokoli si vzpomeneš, to v nějaké ledničce ve vile najdeš</span></li><li id=\"isPasted\"><span lang=\"en-GB\">Vybavení dle vlastních požadavků a potřeb (</span><span lang=\"cs\"><strong>notebook, monitory, sluchátka atd.</strong></span><span lang=\"en-GB\">)</span></li><li id=\"isPasted\"><span lang=\"en-GB\">Zdravotní židle</span><span lang=\"cs\">&nbsp;</span><span lang=\"en-GB\"><strong>Spinalis &amp; standing desks</strong>&nbsp;</span><span lang=\"en-GB\">(za obojí ti tvoje záda poděkují)</span></li><li id=\"isPasted\"><span lang=\"en-GB\"><strong>Firemního barbera</strong></span><span lang=\"cs\">&nbsp;</span><span lang=\"en-GB\">zdarma přímo v prostorech našich vil</span></li></ul><p><br></p><h3 id=\"isPasted\">Jak probíhá výběrko?</h3><p>Od začátku do konce bude tvým kontaktem <a href=\"https://www.linkedin.com/in/marek-fiala-2815567/\" target=\"_blank\" rel=\"noopener\">Marek</a>, tvůj budoucí team leader (žádný HR). Přes <strong>telefonát</strong> si vyjasníme vzájemná očekávání, poté <span lang=\"en-GB\" style=\" background: initial;\">se domluvíme na</span><span lang=\"cs\" style=\" background: initial;\">&nbsp;</span><span lang=\"en-GB\" style=\" background: initial;\"><strong>osobním setkání</strong></span><span lang=\"cs\" style=\" background: initial;\"><strong>&nbsp;</strong></span><span lang=\"en-GB\" style=\" background: initial;\">u nás ve vile, kde dojde i na technické otázky. Jestli bude oboustranná spokojenost, tak nám pošleš ještě <strong>ukázky svých kódů</strong></span><span lang=\"en-GB\" style=\" background: initial;\">&nbsp;a na závěr bude ještě</span><span lang=\"cs\" style=\" background: initial;\">&nbsp;</span><span lang=\"en-GB\" style=\" background: initial;\"><strong>setkání s naším CEO</strong></span><span lang=\"cs\" style=\" background: initial;\">&nbsp;</span><span lang=\"en-GB\" style=\" background: initial;\">Zdeňkem.</span></p>",
+            "url": "/nabidka/20591/php-developer",
+            "company": "CDN77",
+            "companyType": "expansion",
+            "mainAreaName": "PHP",
+            "imageUrl": "https://images-assets.startupjobs.cz/LOGO/26/354ce9508aedfb8e030b416dfa7198ff.png",
+            "locations": "Praha",
+            "shifts": "Full-time",
+            "areaSlugs": [
+                "vyvoj",
+                "vyvoj/back-end",
+                "vyvoj/back-end/php"
+            ],
+            "areaNames": [
+                "Vývoj",
+                "Back-End",
+                "PHP"
+            ],
+            "seniorities": [
+                "junior",
+                "senior",
+                "medior"
+            ],
+            "benefits": [
+                5,
+                6,
+                9,
+                10,
+                19,
+                20,
+                22,
+                23,
+                25,
+                28,
+                29,
+                30,
+                31,
+                32,
+                40,
+                42,
+                43,
+                46,
+                49,
+                50,
+                51,
+                53
+            ],
+            "collaborations": "On-site",
+            "isHot": false,
+            "isRemote": false,
+            "hasUserSeen": true,
+            "hasUserLiked": false,
+            "hasUserApplied": false,
+            "isTop": true,
+            "isImported": false,
+            "coverImageUrl": "https://images-assets.startupjobs.cz/COVER/26/42553170ef4454255e6b5228e2890eeb.png",
+            "companyAreas": [
+                "Technologie"
+            ],
+            "isStartup": false,
+            "salary": null
+        },
+        {
+          "id": 72061,
+          "name": "🧑‍💻 Zkušený DevOps vývojář– Buď součástí rostoucího TECH startupu 🚀",
+          "description": "<p>Hledáme zkušeného DevOps inženýra, který má chuť přidat se do našeho <a href=\"https://www.appmixer.com/\" target=\"_blank\" rel=\"noreferrer noopener\">tech startupu s globální ambicí</a> (pomáháme SaaSovým firmám řešit AI agenty, integrace a automatizaci efektivněji).</p><ul><li id=\"isPasted\">Máš bohaté zkušenosti v oblasti DevOps, zejména s Kubernetes, AWS, GitOps, Ansible, Helm, Terraform and Github Actions?</li><li id=\"isPasted\">Chceš se učit ty nejnovější technologie a podílet se na vývoji platformy pro tvorbu AI agentů?</li><li>Chceš být součástí ambiciózního startupu a získat benefity, které s tím souvisí – práce odkud chceš, kooperace s motitovaným týmem, flexibilní pracovní doba, možnost raketového kariérního růstu?</li></ul><p>Client IO, firma stojící za softwarovými produkty <a href=\"https://www.appmixer.com/\" target=\"_blank\" rel=\"noopener\">Appmixer</a> a <a href=\"https://www.jointjs.com/\" target=\"_blank\" rel=\"noopener\">JointJS</a>, je jednou z 50 nejrychleji rostoucích společností v České republice. Obsluhujeme více než 1000 firemních klientů po celém světě (včetně gigantů jako jsou IBM, Boeing, BMW, AirBnB, UIPath a mnoho dalších). Chceme růst dál a budeme rádi, když porosteš s námi! 🚀</p><h3>Čemu se u nás budeš věnovat?</h3><ul><li>Design, implementace a správa CI/CD pipelines pomocí Github Actions, Jenkins a dalších nástrojů pro automatizaci.</li><li>Nasazení, konfigurace a správa systémů v Kubernetes a OpenShift s důrazem na vysokou dostupnost a škálovatelnost.</li><li>Práce s Kubernetes pro orchestraci kontejnerových aplikací s důrazem na efektivní nasazení a provoz.</li><li>Pomoc při přechodu části platformy do AWS.</li><li>Údržba a optimalizace serverů a systémů založených na Linuxu (výkon a bezpečnost jsou klíčové).</li><li>Spolupráce s týmy napříč firmou a návrh vhodných DevOps řešení dle potřeb.</li><li>Monitorování výkonu systému v NewRelic, jeho optimalizace a řešení systémových problémů.</li><li>Zajištění souladu s normami ochrany dat a soukromí.</li><li>Vytváření, správa a dokumentace on-premise instalačních balíčků (helm, terraform, operators).</li><li>Podpora našim zákazníkům s instalací těchto balíčků.</li><li>Orientace v DevOps trendech a jejich začlenění do naší infrastruktury.</li></ul><h3>Co jsou Tvé \"must-haves\"?</h3><ul><li>Bakalářský titul v oboru informatiky, informační technologie nebo příbuzném oboru.</li><li>Bohaté zkušenosti v oblasti DevOps, zejména s Kubernetes, AWS a Github Actions.</li><li>Zkušenost s OpenShift je výhodou.</li><li>Hluboká znalost síťové infrastruktury a systémové bezpečnosti.</li><li>Znalost programovacích jazyků jako jsou Python nebo Bash.</li><li id=\"isPasted\">Znalost NoSQL, Redis, MongoDB, RabbitMQ a ElasticSearch je výhodou.</li><li>Zkušenosti s GIT.</li><li>Důslednost a schopnost samostatně řešit problémy.</li><li>Schopnost pracovat v rychle se měnícím prostředí.</li><li>Perfektní schopnost komunikace v AJ (psanou i mluvenou formou).</li></ul><h3>Čím bys výrazně zvýšil/a své šance být součástí našeho startupu?</h3><ul><li>Znalost správy databází.</li><li>Porozumění architektuře mikroslužeb a RESTful API.</li><li>Znalost JavaScriptu a NodeJS.</li></ul><h3>Co naopak nabízíme my?</h3><ul><li>Možnost pracovat na produktu, který používají firmy z celého světa.</li><li>Práci s novými technologiemi (no kiddin').</li><li>Přátelské prostředí plné motivovaných profesionálů.</li><li>Multijazyčné prostředí, ve kterém své komunikační schopnosti trénuješ denně.</li><li>Možnost pracovat z našich kanceláří na Karlíně či pláže, chalupy, co-workingu... zkrátka odkudkoli chceš.</li><li>Motivační finanční ohodnocení.</li><li>Flexibilní pracovní dobu.</li><li>A to není vše!</li></ul><h3>Proč bys měl/a věnovat svůj čas právě Appmixeru?</h3><p>Jsme tým inovátorů s chutí učit se nové technologie a vytvářet softwarové produkty, které nadchnou naše klienty. Nadšení v nich dnes úspěšně vzbuzujeme technologií, která jim pomáhá řešit jejich AI agentz, integrační a automatizační výzvy efektivněji. Pomocí Appmixeru mohou softwarové společnosti obohatit své produkty o pokročilé funkce jako jsou autonomní AI agenti, integrační marketplace či no-code prostředí pro automatizaci procesů a propojení s aplikacemi třetích stran.</p><p>Kromě Appmixeru jsme úspěšně vyvinuli JavaScriptovou knihovnu pro tvorbu diagramů (<a href=\"https://www.jointjs.com/\" target=\"_blank\" rel=\"noreferrer noopener\">JointJS</a>), která je používána developery z celého světa. Mezi své klienty řadíme firmy jako jsou IBM, Boeing, Oracle, AirBnB či NATO.</p><p>Toho všeho jsme byli schopni s týmem do 20 lidí, které spojuje vize a chuť měnit věci k lepšímu. Jestli chceš být součástí této jízdy, ozvi se! ✌️</p><p>Mimochodem, o našem příběhu se můžete dočíst na CzechCrunch: https://cc.cz/pomahaji-firmam-programovat-bez-znalosti-kodu-nastroje-ceskeho-client-io-maji-v-ibm-i-nato/</p>",
+          "url": "/nabidka/72061/zkuseny-devops-inzenyr-bud-soucasti-rostouciho-tech-startupu",
+          "company": "client IO",
+          "companyType": "growth",
+          "mainAreaName": "DevOps",
+          "imageUrl": "https://images-assets.startupjobs.cz/LOGO/1080/3KADF4IWVGLEclient-io-logo-github144441809158.png",
+          "locations": "Praha",
+          "shifts": "Part-time, Full-time",
+          "areaSlugs": [
+            "vyvoj",
+            "vyvoj/devops"
+          ],
+          "areaNames": [
+            "Vývoj",
+            "DevOps"
+          ],
+          "seniorities": [
+            "senior"
+          ],
+          "benefits": [
+            5,
+            6,
+            19,
+            20,
+            29,
+            30,
+            31,
+            32,
+            42,
+            46,
+            50
+          ],
+          "collaborations": "Freelance, Pracovní smlouva, On-site",
+          "isHot": true,
+          "isRemote": true,
+          "hasUserSeen": false,
+          "hasUserLiked": false,
+          "hasUserApplied": false,
+          "isTop": true,
+          "isImported": false,
+          "coverImageUrl": "https://images-assets.startupjobs.cz/COVER/1080/5a6028c45f1e59716991ed5d346a0b62.png",
+          "companyAreas": [
+            "Technologie"
+          ],
+          "isStartup": false,
+          "salary": null
+        }
+    ],
+    "resultCount": 418,
+    "paginator": {
+      "current": 1,
+      "max": 1
+    }
+}
