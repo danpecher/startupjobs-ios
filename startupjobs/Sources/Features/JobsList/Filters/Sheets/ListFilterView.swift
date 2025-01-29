@@ -6,11 +6,7 @@ struct ListFilterView: View {
     var body: some View {
         List(filter.options) { option in
             Button {
-                if filter.value.contains(option.key) {
-                    filter.value.remove(option.key)
-                } else {
-                    filter.value.insert(option.key)
-                }
+                filter.toggleOption(option)
             } label: {
                 HStack {
                     Text(option.value.stringValue)

@@ -36,4 +36,12 @@ class ListFilter: Filter {
         self.options = options
         self.value = value
     }
+    
+    func toggleOption(_ option: FilterOption) {
+        if value.contains(option.key) {
+            value.remove(option.key)
+        } else {
+            value.insert(option.key)
+        }
+    }
 }
