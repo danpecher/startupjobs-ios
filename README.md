@@ -3,10 +3,10 @@ This is an unofficial iOS client for browsing [StartupJobs](https://www.startupj
 This is a personal practice project, I'm not affiliated with StartupJobs.
 
 Technologies used:
-- [Tuist](https://tuist.dev/) for project setup
+- [Tuist](https://tuist.dev/) for project setup & modules
 - MVVM-C: UIKit navigation with SwiftUI views
-- [Quick](https://github.com/Quick/Quick) for testing
-- [Mocker](https://github.com/WeTransfer/Mocker) for request mocking
+- ~~[Quick](https://github.com/Quick/Quick) for testing~~ (Swift Testing for now)
+- [Mocker](https://github.com/WeTransfer/Mocker) for request mocking (TBD)
 
 WIP TODO list:
 - [x]  Networking layer
