@@ -1,0 +1,4 @@
+project: startupjobs.xcworkspace
+retain_public: true
+schemes:
+- StartupJobs

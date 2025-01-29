@@ -18,8 +18,6 @@ class JobsListViewModel: ObservableObject {
         dataLoader.reachedEnd
     }
     
-    var cancellables = Set<AnyCancellable>()
-    
     init(filters: [any Filter], apiService: ApiServicing) {
         self.filters = filters
         self.apiService = apiService

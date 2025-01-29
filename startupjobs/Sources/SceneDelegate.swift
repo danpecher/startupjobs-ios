@@ -1,7 +1,5 @@
 import UIKit
 import SwiftUI
-import Networking
-import AppFramework
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private let appCoordinator = JobsListCoordinator()

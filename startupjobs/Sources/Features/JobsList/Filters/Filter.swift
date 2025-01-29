@@ -1,6 +1,6 @@
 typealias QueryPair = (queryKey: String, value: String)
 
-protocol Filter {
+protocol Filter<Value> {
     associatedtype Value
     
     var title: String { get }
