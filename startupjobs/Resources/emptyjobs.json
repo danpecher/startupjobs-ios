@@ -1,0 +1,10 @@
+{
+  "resultSet": [
+      {"id": 1, "name": "Hello!"}
+  ],
+  "resultCount": 0,
+  "paginator": {
+    "current": 1,
+    "max": 1
+  }
+}

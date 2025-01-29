@@ -1,16 +1,17 @@
 import SwiftUI
 
 struct FiltersToolbar: View {
-    @EnvironmentObject var viewModel: JobsListViewModel
-
     @State private var selected: (any Filter)? = nil
+    
+    let filters: [any Filter]
+    let didUpdateFilters: () -> Void
     
     var body: some View {
         ZStack {
             HStack {
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(viewModel.filters, id: \.queryKey) { filter in
+                        ForEach(filters, id: \.key) { filter in
                             filterItem(filter)
                         }
                     }
@@ -21,31 +22,8 @@ struct FiltersToolbar: View {
             filterButton
         }
         .padding(.horizontal)
-        .sheet(isPresented: .constant(selected != nil), onDismiss: {
-            selected = nil
-            
-            Task {
-                await viewModel.load()
-            }
-        }) {
-            VStack {
-                switch selected {
-                case let filter as ListFilter:
-                    ListFilterView(filter: filter)
-                default:
-                    EmptyView()
-                }
-                
-                Button {
-                    selected = nil
-                    
-                    Task {
-                        await viewModel.load()
-                    }
-                } label: {
-                    Text("Done")
-                }
-            }
+        .sheet(isPresented: .constant(selected != nil), onDismiss: didDismissSheet) {
+            FilterWrapper(filter: selected, onDoneTapped: didDismissSheet)
         }
     }
 }
@@ -60,6 +38,7 @@ private extension FiltersToolbar {
                 Image(systemName: "chevron.down")
             }
         }
+        .tint(Color("primary"))
     }
     
     var filterButton: some View {
@@ -89,13 +68,23 @@ private extension FiltersToolbar {
             }
         }
     }
+    
+    func didDismissSheet() {
+        selected = nil
+        
+        // TODO: Don't update if filters didn't change
+        didUpdateFilters()
+    }
 }
 
 #Preview {
     VStack {
-        FiltersToolbar()
+        FiltersToolbar(filters: [], didUpdateFilters: {})
             .environmentObject(
-                JobsListViewModel(apiService: PreviewApiService())
+                JobsListViewModel(
+                    filters: [],
+                    apiService: PreviewApiService(previewData: nil)
+                )
             )
         Spacer()
     }

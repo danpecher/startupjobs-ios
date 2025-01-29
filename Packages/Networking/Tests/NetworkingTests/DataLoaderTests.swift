@@ -1,5 +1,5 @@
 import Testing
-@testable import App
+@testable import Networking
 
 extension DataState {
     var isFailure: Bool {

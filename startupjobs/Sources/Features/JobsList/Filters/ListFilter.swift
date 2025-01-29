@@ -2,7 +2,7 @@ import SwiftUI
 
 class ListFilter: Filter, ObservableObject {
     var title: String
-    var queryKey: String
+    var key: String
     @Published var value: Set<String>
     var options: [FilterOption]
 
@@ -19,8 +19,8 @@ class ListFilter: Filter, ObservableObject {
                 .joined(separator: ", ")
     }
 
-    var queryValues: [(String, String)] {
-        value.map({ (queryKey, $0) })
+    var queryValues: [QueryPair] {
+        value.map({ ("\(key)[]", $0) })
     }
 
     init(
@@ -30,7 +30,7 @@ class ListFilter: Filter, ObservableObject {
         value: Set<String> = []
     ) {
         self.title = title
-        self.queryKey = queryKey
+        self.key = queryKey
         self.options = options
         self.value = value
     }

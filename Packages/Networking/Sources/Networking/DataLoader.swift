@@ -1,34 +1,33 @@
 import Observation
 
-enum DataState<T> {
-    case initial
-    case loading
-    case loaded(T)
-    case loadingMore(T)
-    case failed(Error, T? = nil)
-}
-
-struct DataResult<T> {
-    let data: T
-    let hasMore: Bool
-}
-
 @Observable
-class DataLoader<T: Hashable> {
+public class DataLoader<T: Hashable> {
+    /// - Parameter page: The page number to fetch
+    typealias DataTask = (_ page: Int) async throws -> DataResult<[T]>
+    
     @ObservationIgnored
-    private var dataTask: (Int) async throws -> DataResult<[T]>
+    /// Provide a function that fetches data
+    private var dataTask: DataTask
     
     private(set) var page = 1
     
-    private(set) var state: DataState<[T]> = .initial
+    public private(set) var state: DataState<[T]> = .initial
     
-    private(set) var reachedEnd = false
+    public var currentData: [T]? {
+        guard case let .loaded(t) = state else {
+            return nil
+        }
+        
+        return t
+    }
     
-    init(dataTask: @escaping (Int) async throws -> DataResult<[T]>) {
+    public private(set) var reachedEnd = false
+    
+    public init(dataTask: @escaping (Int) async throws -> DataResult<[T]>) {
         self.dataTask = dataTask
     }
     
-    func load() async {
+    public func load() async {
         do {
             page = 1
             state = .loading
@@ -41,7 +40,7 @@ class DataLoader<T: Hashable> {
         }
     }
     
-    func loadMore() async {
+    public func loadMore() async {
         guard !reachedEnd, case let .loaded(existingItems) = state else {
             return
         }
@@ -52,7 +51,7 @@ class DataLoader<T: Hashable> {
             state = .loadingMore(existingItems)
             let result = try await dataTask(page)
             reachedEnd = !result.hasMore
-            state = .loaded((existingItems + result.data).removingDuplicates())
+            state = .loaded(existingItems + result.data)
         } catch {
             state = .failed(error, existingItems)
         }

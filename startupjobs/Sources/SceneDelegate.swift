@@ -1,8 +1,10 @@
 import UIKit
 import SwiftUI
+import Networking
+import AppFramework
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    private let appCoordinator = AppCoordinator()
+    private let appCoordinator = JobsListCoordinator()
     
     var window: UIWindow?
     

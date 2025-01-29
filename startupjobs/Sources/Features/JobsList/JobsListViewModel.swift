@@ -1,6 +1,7 @@
 import Combine
 import Observation
 import Foundation
+import Networking
 
 @Observable
 class JobsListViewModel: ObservableObject {
@@ -12,20 +13,10 @@ class JobsListViewModel: ObservableObject {
     
     private(set) var jobs: DataLoader<JobListing>!
     
-    var filters: [any Filter] = [
-        // TODO: Load options from backend
-        // SearchableListFilter()
-        ListFilter(
-            title: "Obory",
-            queryKey: "area[]",
-            options: [
-                .init(key: "vyvoj", value: "Vyvoj"),
-                .init(key: "vyvoj/back-end", value: "Back-End"),
-            ]
-        ),
-    ]
+    var filters: [any Filter]
     
-    init(apiService: ApiServicing) {
+    init(filters: [any Filter], apiService: ApiServicing) {
+        self.filters = filters
         self.apiService = apiService
         self.jobs = .init(dataTask: fetchJobs)
     }
@@ -41,6 +32,17 @@ class JobsListViewModel: ObservableObject {
         await jobs.load()
     }
     
+    // TODO: offer new items as a button after some time
+    func loadIfNeeded() {
+        guard jobs.currentData == nil else {
+            return
+        }
+        
+        Task {
+            await load()
+        }
+    }
+    
     func loadMore() {
         Task {
             await jobs.loadMore()
@@ -53,20 +55,18 @@ class JobsListViewModel: ObservableObject {
                 page: page,
                 filters: filters
                     .filter(\.hasValues)
-                    .reduce(into: [], { partialResult, filter in
-                        partialResult.append(contentsOf: filter.queryValues)
-                })
+                    .flatMap { $0.queryValues }
             )
         )
         
         return DataResult(
-            data: result.resultSet,
+            data: result.resultSet.removingDuplicates(),
             hasMore: result.paginator.current < result.paginator.max
         )
     }
     
     // MARK: - Actions
-    func openJobDetaial(id: Int) {
+    func openJobDetail(id: Int) {
         eventSubject.send(.didTapJobDetailButton(id: id))
     }
 }

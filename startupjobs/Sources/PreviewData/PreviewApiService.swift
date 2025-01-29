@@ -1,20 +1,22 @@
 import Foundation
+import Networking
 
 class PreviewApiService: ApiServicing {
-    static var previewData: Data?
+    let previewData: Data?
     
     let delay: Int?
     
     /// - Parameter delay: Delay request (in seconds)
-    init(delay: Int? = nil) {
+    init(previewData: Data?, delay: Int? = nil) {
+        self.previewData = previewData
         self.delay = delay
     }
     
-    func request<T: Decodable>(_ route: Route) async throws -> ApiResult<T> {
+    func request<T: Decodable>(_ route: Route) async throws -> T {
         if let delay {
             try? await Task.sleep(for: .seconds(delay))
         }
         
-        return try JSONDecoder().decode(ApiResult<T>.self, from: Self.previewData!)
+        return try JSONDecoder().decode(T.self, from: previewData!)
     }
 }

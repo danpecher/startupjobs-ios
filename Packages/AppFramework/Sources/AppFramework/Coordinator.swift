@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-protocol Coordinator: AnyObject {
+public protocol Coordinator: AnyObject {
     var navigationController: UINavigationController? { get set }
     var childCoordinators: [Coordinator] { get set }
     var parentCoordinator: Coordinator? { get set }
@@ -13,20 +13,20 @@ protocol Coordinator: AnyObject {
 }
 
 extension Coordinator {
-    func coordinate(to coordinator: Coordinator) {
+    public func coordinate(to coordinator: Coordinator) {
         childCoordinators.append(coordinator)
         coordinator.parentCoordinator = self
         coordinator.start()
     }
     
-    func finish() {
+    public func finish() {
         childCoordinators.forEach { $0.finish() }
         childCoordinators.removeAll()
         
         parentCoordinator?.childCoordinators.removeAll { $0 === self }
     }
     
-    func childDidFinish(_ child: Coordinator) {
+    public func childDidFinish(_ child: Coordinator) {
         childCoordinators.removeAll { $0 === child }
     }
 }

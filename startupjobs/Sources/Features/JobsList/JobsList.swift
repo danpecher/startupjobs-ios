@@ -4,37 +4,58 @@ struct JobsList: View {
     let viewModel: JobsListViewModel
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                FiltersToolbar()
-                    .environmentObject(viewModel)
+        VStack {
+            VStack {
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 25)
                 
-                switch viewModel.jobs.state {
-                case .initial:
-                    EmptyView()
-                case .loading:
-                    Text("Loading")
-                case let .failed(error, _):
-                    Text(error.localizedDescription)
-                case .loaded(let items), .loadingMore(let items):
-                    list(items: items)
+                Text("unofficial client")
+                    .font(.system(size: 10))
+            }
+            ScrollView {
+                LazyVStack {
+                    FiltersToolbar(filters: viewModel.filters, didUpdateFilters: {
+                        Task {
+                            await viewModel.load()
+                        }
+                    })
+                    .environmentObject(viewModel)
+                    
+                    switch viewModel.jobs.state {
+                    case .initial:
+                        EmptyView()
+                    case .loading:
+                        Text("Loading")
+                    case let .failed(error, _):
+                        Text(error.localizedDescription)
+                    case .loaded(let items), .loadingMore(let items):
+                        list(items: items)
+                    }
                 }
             }
-        }
-        .refreshable {
-            await viewModel.load()
+            .refreshable {
+                await viewModel.load()
+            }
         }
         .task {
-            await viewModel.load()
+            viewModel.loadIfNeeded()
         }
     }
     
     @ViewBuilder
     private func list(items: [JobListing]) -> some View {
         ForEach(Array(items.enumerated()), id: \.1.id) { index, job in
-            JobsListItem(listing: job)
-                .padding(.horizontal)
-                .padding(.vertical, 8)
+            Button {
+                viewModel.openJobDetail(id: job.id)
+            } label: {
+                JobsListItem(listing: job)
+                    .padding(.horizontal)
+                    .padding(.vertical, 8)
+            }
+            .buttonStyle(.plain)
+            .tint(.black)
         }
         
         if !viewModel.jobs.reachedEnd {
@@ -47,13 +68,15 @@ struct JobsList: View {
 }
 
 #Preview {
-    let _ = PreviewApiService.previewData = try! Data(
-        contentsOf: Bundle.main.url(forResource: "fakejobs", withExtension: "json")!
-    )
-    
     JobsList(
         viewModel: JobsListViewModel(
-            apiService: PreviewApiService(delay: 1)
+            filters: [],
+            apiService: PreviewApiService(
+                previewData: try! Data(
+                    contentsOf: Bundle.main.url(forResource: "fakejobs", withExtension: "json")!
+                ),
+                delay: 1
+            )
         )
     )
 }

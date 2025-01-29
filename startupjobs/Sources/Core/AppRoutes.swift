@@ -1,7 +1,11 @@
 import Foundation
+import Networking
 
 enum AppRoutes: Route {
-    case jobsList(page: Int? = nil, filters: [(String, String)] = [])
+    case jobsList(
+        page: Int? = nil,
+        filters: [QueryPair] = []
+    )
     
     var path: String {
         switch self {
