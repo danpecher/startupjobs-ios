@@ -23,7 +23,9 @@ struct FiltersToolbar: View {
         }
         .padding(.horizontal)
         .sheet(isPresented: .constant(selected != nil), onDismiss: didDismissSheet) {
-            FilterWrapper(filter: selected, onDoneTapped: didDismissSheet)
+            FilterWrapper(filter: selected, onDoneTapped: {
+                selected = nil
+            })
         }
     }
 }
