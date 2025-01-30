@@ -10,6 +10,8 @@ struct ListFilterView: View {
             } label: {
                 HStack {
                     Text(option.value.stringValue)
+                        .font(Fonts.regular)
+                        .foregroundStyle(Colors.primary)
                     
                     if filter.value.contains(option.key) {
                         Spacer()

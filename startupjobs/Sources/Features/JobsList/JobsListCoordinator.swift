@@ -50,10 +50,16 @@ private extension JobsListCoordinator {
         let viewModel = JobsListViewModel(
             filters: [
                 // TODO: Add all filters
-                ListFilter(title: "Obory", queryKey: "area", options: [
-                    .init(key: "vyvoj", value: "Vyvoj"),
-                    .init(key: "vyvoj/back-end", value: "Back-End"),
-                ], value: ["vyvoj"])
+                ListFilter(
+                    title: "Obory",
+                    queryKey: "area",
+                    options: [
+                        .init(key: "vyvoj", value: "Vývoj"),
+                        .init(key: "vyvoj/back-end", value: "Back-End"),
+                        .init(key: "vyvoj/mobilni-vyvoj/ios", value: "iOS"),
+                    ],
+                    value: ["vyvoj"]
+                ),
             ],
             apiService: apiService
         )

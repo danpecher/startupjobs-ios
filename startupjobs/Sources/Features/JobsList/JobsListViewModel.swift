@@ -1,4 +1,5 @@
 import Combine
+import SwiftUI
 import Foundation
 import Networking
 
@@ -13,6 +14,8 @@ class JobsListViewModel: ObservableObject {
     private var dataLoader: DataLoader<JobListing>!
     
     @Published var state: DataState<[JobListing]> = .initial
+    
+    var cancellables = Set<AnyCancellable>()
     
     var reachedEnd: Bool {
         dataLoader.reachedEnd
@@ -81,18 +84,27 @@ private extension JobsListViewModel {
     func bindState() {
         dataLoader.state
             .receive(on: DispatchQueue.main)
-            .compactMap({ [weak self] newState in
-                self?.removeDuplicates(newState)
+            .sink(receiveValue: { [weak self] state in
+                guard let self else {
+                    return
+                }
+                
+                // The API returnes duplicates in case of promoted jobs -> we don't want that
+                switch state {
+                case let .loaded(data):
+                    if self.dataLoader.currentData == nil {
+                        withAnimation {
+                            self.state = .loaded(data.removingDuplicates())
+                        }
+                    } else {
+                        self.state = .loaded(data.removingDuplicates())
+                    }
+                case let .loadingMore(data):
+                    self.state = .loadingMore(data.removingDuplicates())
+                default:
+                    self.state = state
+                }
             })
-            .assign(to: &$state)
-    }
-    
-    // The API returnes duplicates in case of promoted jobs -> we don't want that
-    func removeDuplicates(_ state: DataState<[JobListing]>) -> DataState<[JobListing]> {
-        guard case let .loaded(data) = state else {
-            return state
-        }
-        
-        return .loaded(data.removingDuplicates())
+            .store(in: &cancellables)
     }
 }

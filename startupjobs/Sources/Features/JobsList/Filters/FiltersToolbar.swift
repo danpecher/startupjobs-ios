@@ -37,10 +37,12 @@ private extension FiltersToolbar {
         } label: {
             HStack {
                 Text(filter.label)
+                    .font(Fonts.regular)
                 Image(systemName: "chevron.down")
+                    .font(.system(size: 12))
             }
         }
-        .tint(Color("primary"))
+        .tint(Colors.primary)
     }
     
     var filterButton: some View {
@@ -52,14 +54,15 @@ private extension FiltersToolbar {
             } label: {
                 VStack {
                     Image(systemName: "slider.horizontal.3")
+                        .tint(Colors.primary)
                         .padding(2)
                         .padding(.leading, 20)
                         .background(
                             LinearGradient(
                                 gradient: Gradient(
                                     stops: [
-                                        .init(color: Color(uiColor: .systemBackground).opacity(0), location: 0),
-                                        .init(color: Color(uiColor: .systemBackground), location: 0.45)
+                                        .init(color: .black.opacity(0), location: 0),
+                                        .init(color: Colors.backgroundPrimary, location: 0.4)
                                     ]
                                 ),
                                 startPoint: .leading,
@@ -81,8 +84,15 @@ private extension FiltersToolbar {
 
 #Preview {
     VStack {
-        FiltersToolbar(filters: [], didUpdateFilters: {})
+        FiltersToolbar(filters: [
+            ListFilter(title: "Oblast", queryKey: "area", options: []),
+            ListFilter(title: "Oblast", queryKey: "area", options: []),
+            ListFilter(title: "Oblast", queryKey: "area", options: []),
+            ListFilter(title: "Oblast", queryKey: "area", options: []),
+            ListFilter(title: "Oblast", queryKey: "area", options: []),
+        ], didUpdateFilters: {})
 
         Spacer()
     }
+    .background(Colors.backgroundPrimary)
 }

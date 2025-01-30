@@ -18,6 +18,8 @@ struct FilterWrapper: View {
                 onDoneTapped()
             } label: {
                 Text("Done")
+                    .font(Fonts.regular)
+                    .foregroundStyle(Colors.primary)
             }
         }
     }

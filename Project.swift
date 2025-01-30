@@ -67,7 +67,10 @@ let project = Project(
             ),
             sources: ["startupjobs/Sources/**"],
             resources: ["startupjobs/Resources/**"],
-            dependencies: frameworks.map { .target(name: $0.0) } + [ .external(name: "Mocker") ],
+            dependencies: frameworks.map { .target(name: $0.0) } + [
+                .external(name: "Nuke"),
+                .external(name: "NukeUI"),
+            ],
             settings: .settings(
                 base: [
                     "IPHONEOS_DEPLOYMENT_TARGET": deploymentTarget,

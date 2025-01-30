@@ -5,28 +5,30 @@ struct JobsList: View {
     
     var body: some View {
         VStack {
-            VStack {
+            VStack(spacing: 0) {
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 25)
                 
                 Text("unofficial client")
-                    .font(.system(size: 10))
+                    .font(Fonts.note)
             }
+            .padding(.top, 8)
+            
+            
+            FiltersToolbar(filters: viewModel.filters, didUpdateFilters: {
+                Task {
+                    await viewModel.load()
+                }
+            })
+            
             ScrollView {
                 LazyVStack {
-                    FiltersToolbar(filters: viewModel.filters, didUpdateFilters: {
-                        Task {
-                            await viewModel.load()
-                        }
-                    })
-                    
                     switch viewModel.state {
-                    case .initial:
-                        EmptyView()
-                    case .loading:
-                        Text("Loading")
+                    case .initial, .loading:
+                        ProgressView()
+                            .frame(maxHeight: .infinity)
                     case let .failed(error, _):
                         Text(error.localizedDescription)
                     case .loaded(let items), .loadingMore(let items):
@@ -34,10 +36,11 @@ struct JobsList: View {
                     }
                 }
             }
-            .refreshable {
-                await viewModel.load()
-            }
         }
+        .refreshable {
+            await viewModel.load()
+        }
+        .background(Colors.backgroundPrimary)
         .task {
             viewModel.loadIfNeeded()
         }
@@ -45,13 +48,23 @@ struct JobsList: View {
     
     @ViewBuilder
     private func list(items: [JobListing]) -> some View {
-        ForEach(Array(items.enumerated()), id: \.1.id) { index, job in
+        ForEach(Array(items.enumerated()), id: \.1.id) {
+            index,
+            job in
             Button {
                 viewModel.openJobDetail(id: job.id)
             } label: {
-                JobsListItem(listing: job)
+                VStack {
+                    JobsListItem(
+                        viewModel: .init(
+                            listing: job
+                        )
+                    )
                     .padding(.horizontal)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 14)
+                    
+                    Divider()
+                }
             }
             .buttonStyle(.plain)
             .tint(.black)

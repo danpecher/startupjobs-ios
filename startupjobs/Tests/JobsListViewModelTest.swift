@@ -33,7 +33,7 @@ struct JobsListViewModelTest {
             filters: [],
             apiService: PreviewApiService(
                 previewData: try! Data(
-                    contentsOf: Bundle.main.url(forResource: "duplicated_jobs", withExtension: "json")!
+                    contentsOf: Bundle.main.url(forResource: "duplicatedjobs", withExtension: "json")!
                 )
             )
         )
