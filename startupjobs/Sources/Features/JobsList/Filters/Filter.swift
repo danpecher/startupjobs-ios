@@ -9,4 +9,6 @@ protocol Filter<Value> {
     var value: Value { get }
     var queryValues: [QueryPair] { get }
     var hasValues: Bool { get }
+    func onViewAppear()
+    func onViewDisappear()
 }

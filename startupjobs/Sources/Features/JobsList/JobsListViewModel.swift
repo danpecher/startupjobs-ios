@@ -9,13 +9,13 @@ class JobsListViewModel: ObservableObject {
     }
     
     let filters: [any Filter]
-    let apiService: ApiServicing
+    private let apiService: ApiServicing
     
     private var dataLoader: DataLoader<JobListing>!
     
     @Published var state: DataState<[JobListing]> = .initial
     
-    var cancellables = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
     
     var reachedEnd: Bool {
         dataLoader.reachedEnd
@@ -29,6 +29,7 @@ class JobsListViewModel: ObservableObject {
         bindState()
     }
     
+
     private let eventSubject = PassthroughSubject<Event, Never>()
     
     var events: AnyPublisher<Event, Never> {

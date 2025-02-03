@@ -27,3 +27,14 @@ struct Salary: Decodable, Hashable  {
     let max: Int
     let min: Int
 }
+
+struct FilterOptionsSearchResult: Decodable {
+    let urlIdentifier: String
+    let name: String
+}
+
+struct CompanySearchResult: Decodable {
+    let id: Int
+    let name: String
+    let slug: String
+}

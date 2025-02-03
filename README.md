@@ -15,11 +15,11 @@ Technologies used:
 - [x]  Basic list with infinite scroll
 - [x]  Filters sheet
 - [x]  Filter data
-- [x]  Display active filters
+- [x]  Display active filters (work mode / area / location / salary / stack / seniority / contract type / startups / benefits)
 - [ ]  Load dynamic filter values from api
+- [ ]  Search by keywords
 - [ ]  Job detail
 - [ ]  Group by date (Today, yesterday, etc.)
-- [ ]  Search by keywords
 - [ ]  Refresh data if stale (view x new jobs)
 - [ ]  Full screen tiktok style scroll (experimental) – switch between list / fullscreen
 - [ ]  Mark job as interested

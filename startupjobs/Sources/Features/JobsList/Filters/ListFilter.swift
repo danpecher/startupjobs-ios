@@ -44,4 +44,7 @@ class ListFilter: Filter {
             value.insert(option.key)
         }
     }
+    
+    func onViewAppear() {}
+    func onViewDisappear() {}
 }

@@ -18,7 +18,8 @@ public class ApiService: ApiServicing {
         print("Request: ", request)
         
         if let response = response as? HTTPURLResponse {
-            print("Response: ", response)
+            print("API Response \(response.statusCode)")
+            // print(String(data: data, encoding: .utf8))
         }
 #endif
 

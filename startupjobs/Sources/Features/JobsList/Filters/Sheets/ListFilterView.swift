@@ -20,5 +20,6 @@ struct ListFilterView: View {
                 }
             }
         }
+        .listStyle(.plain)
     }
 }

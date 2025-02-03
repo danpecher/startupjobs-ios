@@ -16,12 +16,12 @@ struct JobsList: View {
             }
             .padding(.top, 8)
             
-            
             FiltersToolbar(filters: viewModel.filters, didUpdateFilters: {
                 Task {
                     await viewModel.load()
                 }
             })
+            .padding(.vertical, 8)            
             
             ScrollView {
                 LazyVStack {
@@ -36,9 +36,10 @@ struct JobsList: View {
                     }
                 }
             }
-        }
-        .refreshable {
-            await viewModel.load()
+            .refreshable {
+                // wrap in extra task to avoid getting cancelled
+                Task { await viewModel.load() }
+            }
         }
         .background(Colors.backgroundPrimary)
         .task {

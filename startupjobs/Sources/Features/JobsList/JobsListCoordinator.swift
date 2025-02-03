@@ -43,23 +43,63 @@ private extension JobsListCoordinator {
             contentsOf: Bundle.main.url(forResource: "cachedjobs", withExtension: "json")!
         ))
         : ApiService(
-            baseUrl: "https://www.startupjobs.cz/api",
+            baseUrl: "https://www.startupjobs.cz/",
             urlSession: URLSession.shared
         )
         
         let viewModel = JobsListViewModel(
             filters: [
-                // TODO: Add all filters
-                ListFilter(
-                    title: "Obory",
-                    queryKey: "area",
-                    options: [
-                        .init(key: "vyvoj", value: "Vývoj"),
-                        .init(key: "vyvoj/back-end", value: "Back-End"),
-                        .init(key: "vyvoj/mobilni-vyvoj/ios", value: "iOS"),
-                    ],
-                    value: ["vyvoj"]
+                // TODO: TreeSearchListFilter
+                ApiSearchListFilter(
+                    apiService: apiService,
+                    title: "Location",
+                    queryKey: "location",
+                    value: [],
+                    searchRouteProvider: { query in
+                        AppRoutes.locationSearch(query: query)
+                    }
                 ),
+                ListFilter(
+                    title: "Work mode",
+                    queryKey: "collaboration",
+                    options: [
+                        .init(key: "remote", value: "Remote"),
+                        .init(key: "hybrid", value: "Hybrid"),
+                        .init(key: "onsite", value: "Onsite"),
+                    ]
+                ),
+                ListFilter(
+                    title: "Seniority",
+                    queryKey: "seniority",
+                    options: [
+                        .init(key: "junior", value: "Junior"),
+                        .init(key: "medior", value: "Medior"),
+                        .init(key: "senior", value: "Senior"),
+                    ]
+                ),
+                ApiSearchListFilter(
+                    apiService: apiService,
+                    title: "Startups",
+                    queryKey: "company",
+                    value: [],
+                    searchRouteProvider: { query in
+                        AppRoutes.companySearch(query: query)
+                    },
+                    optionsParser: { (items: [CompanySearchResult]) in
+                        items.map {
+                            FilterOption(key: $0.slug, value: $0.name)
+                        }
+                    }
+                ),
+                ApiSearchListFilter(
+                    apiService: apiService,
+                    title: "Tech",
+                    queryKey: "technological-tag",
+                    value: [],
+                    searchRouteProvider: { query in
+                        AppRoutes.techSearch(query: query)
+                    }
+                )
             ],
             apiService: apiService
         )
