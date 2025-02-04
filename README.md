@@ -1,7 +1,9 @@
 This is an unofficial iOS client for browsing [StartupJobs](https://www.startupjobs.cz/) listings. I wanted to be able to browse jobs while on the go and didn't like the mobile web experience. It's currently in early stages, checkout the [TODO](#todo)
 
-<img src="screenshot.png" alt="App screenshot" width="200"/>
-<img src="screenshot_dark.png" alt="App dark mode screenshot" width="200"/>
+<p float="left">
+    <img src="screenshot.png" alt="App screenshot" width="200"/>
+    <img src="screenshot_dark.png" alt="App dark mode screenshot" width="200"/>
+</p>
 
 This is a personal practice project, I'm not affiliated with StartupJobs.
 
