@@ -11,6 +11,7 @@ struct FiltersToolbar: View {
     }
     
     let didUpdateFilters: () -> Void
+    let onSeeAllTap: () -> Void
     
     var body: some View {
         ZStack {
@@ -22,14 +23,17 @@ struct FiltersToolbar: View {
                         }
                     }
                     .padding(.trailing, 40)
+                    .padding(.leading, 12)
                 }
                 .scrollIndicators(.hidden)
             }
             
             filterButton
         }
-        .padding(.horizontal)
-        .sheet(isPresented: .constant(selected != nil), onDismiss: didDismissSheet) {
+        .sheet(
+            isPresented: .constant(selected != nil),
+            onDismiss: didDismissSheet
+        ) {
             FilterWrapper(filter: selected, onDoneTapped: {
                 selected = nil
             })
@@ -83,12 +87,12 @@ private extension FiltersToolbar {
             Spacer()
             
             Button {
-                
+                onSeeAllTap()
             } label: {
                 VStack {
                     Image(systemName: "slider.horizontal.3")
                         .tint(Colors.primary)
-                        .padding(10)
+                        .padding(.vertical, 10)
                         .padding(.leading, 20)
                         .background(
                             LinearGradient(
@@ -134,8 +138,9 @@ private extension FiltersToolbar {
                 ListFilter(title: "Oblast", queryKey: "area", options: []),
                 ListFilter(title: "Oblast", queryKey: "area", options: []),
             ],
-            didUpdateFilters: {
-            })
+            didUpdateFilters: {},
+            onSeeAllTap: {}
+        )
 
         Spacer()
     }

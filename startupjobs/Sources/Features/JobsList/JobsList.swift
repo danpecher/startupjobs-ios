@@ -3,6 +3,10 @@ import SwiftUI
 struct JobsList: View {
     @StateObject var viewModel: JobsListViewModel
     
+    init(viewModel: JobsListViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
         VStack {
             VStack(spacing: 0) {
@@ -16,12 +20,20 @@ struct JobsList: View {
             }
             .padding(.top, 8)
             
-            FiltersToolbar(filters: viewModel.filters, didUpdateFilters: {
-                Task {
-                    await viewModel.load()
+            FiltersToolbar(
+                filters: viewModel.filters,
+                didUpdateFilters: {
+                    Task {
+                        await viewModel.load()
+                    }
+                },
+                onSeeAllTap: {
+                    Task {
+                        viewModel.showAllFilters()
+                    }
                 }
-            })
-            .padding(.vertical, 8)            
+            )
+            .padding(.vertical, 8)
             
             ScrollView {
                 LazyVStack {
@@ -49,9 +61,7 @@ struct JobsList: View {
     
     @ViewBuilder
     private func list(items: [JobListing]) -> some View {
-        ForEach(Array(items.enumerated()), id: \.1.id) {
-            index,
-            job in
+        ForEach(items, id: \.id) { job in
             Button {
                 viewModel.openJobDetail(id: job.id)
             } label: {
@@ -61,8 +71,8 @@ struct JobsList: View {
                             listing: job
                         )
                     )
-                    .padding(.horizontal)
-                    .padding(.vertical, 14)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
                     
                     Divider()
                 }

@@ -6,6 +6,7 @@ import Networking
 class JobsListViewModel: ObservableObject {
     enum Event {
         case didTapJobDetailButton(id: Int)
+        case showAllFilters
     }
     
     let filters: [any Filter]
@@ -61,6 +62,10 @@ class JobsListViewModel: ObservableObject {
     // MARK: - Actions
     func openJobDetail(id: Int) {
         eventSubject.send(.didTapJobDetailButton(id: id))
+    }
+    
+    func showAllFilters() {
+        eventSubject.send(.showAllFilters)
     }
 }
 

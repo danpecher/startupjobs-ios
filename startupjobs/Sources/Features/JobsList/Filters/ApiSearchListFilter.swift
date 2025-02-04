@@ -14,6 +14,10 @@ class ApiSearchListFilter<SearchResultType: Decodable>: ListFilter, SearchableLi
     private let searchRouteProvider: (String) -> Route
     private let optionsParser: (SearchResultType) -> [FilterOption]
     
+    override var previewOptions: [FilterOption] {
+        options.filter { value.contains($0.key) }
+    }
+    
     private var cancellables = Set<AnyCancellable>()
     
     private var searchTask: Task<(), Never>?
@@ -33,7 +37,8 @@ class ApiSearchListFilter<SearchResultType: Decodable>: ListFilter, SearchableLi
         super.init(
             title: title,
             queryKey: queryKey,
-            options: []
+            options: [],
+            value: value
         )
     }
     
@@ -67,7 +72,14 @@ private extension ApiSearchListFilter {
             do {
                 let result: SearchResultType = try await apiService.request(searchRouteProvider(query))
                 
-                options = optionsParser(result)
+                // Add currently selected options to the top of results
+                let selectedOptions = options
+                    .filter { value.contains($0.key) }
+                
+                // and remove them from received results
+                let receivedOptions = optionsParser(result)
+                    .filter { !value.contains($0.key) }
+                options = selectedOptions + receivedOptions
             } catch {
                 print(error)
                 return

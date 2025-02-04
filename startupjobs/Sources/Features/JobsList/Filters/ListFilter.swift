@@ -7,7 +7,11 @@ class ListFilter: Filter {
     var key: String
     var value: Set<String>
     var options: [FilterOption]
-
+    
+    var previewOptions: [FilterOption] {
+        options
+    }
+    
     var hasValues: Bool {
         !value.isEmpty
     }
@@ -43,6 +47,10 @@ class ListFilter: Filter {
         } else {
             value.insert(option.key)
         }
+    }
+    
+    func contains(value: String) -> Bool {
+        value.contains(value)
     }
     
     func onViewAppear() {}

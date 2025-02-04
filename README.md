@@ -1,6 +1,7 @@
 This is an unofficial iOS client for browsing [StartupJobs](https://www.startupjobs.cz/) listings. I wanted to be able to browse jobs while on the go and didn't like the mobile web experience. It's currently in early stages, checkout the [TODO](#todo)
 
-<img src="Screenshot.png" alt="App Screenshot" width="200"/>
+<img src="screenshot.png" alt="App screenshot" width="200"/>
+<img src="screenshot_dark.png" alt="App dark mode screenshot" width="200"/>
 
 This is a personal practice project, I'm not affiliated with StartupJobs.
 
@@ -15,13 +16,16 @@ Technologies used:
 - [x]  Basic list with infinite scroll
 - [x]  Filters sheet
 - [x]  Filter data
-- [x]  Display active filters (work mode / area / location / salary / stack / seniority / contract type / startups / benefits)
-- [ ]  Load dynamic filter values from api
-- [ ]  Search by keywords
+- [x]  Display active filters (work mode / location / salary / stack / seniority / contract type / startups / benefits)
+- [x]  Load dynamic filter values from api
+- [x]  All filters sheet
+- [ ]  Tree filter (work area)
 - [ ]  Job detail
-- [ ]  Group by date (Today, yesterday, etc.)
 - [ ]  Refresh data if stale (view x new jobs)
+- [ ]  Group by date (Today, yesterday, etc.)
 - [ ]  Full screen tiktok style scroll (experimental) – switch between list / fullscreen
+
+### Local jobs tools
 - [ ]  Mark job as interested
 - [ ]  My jobs tab
 - [ ]  Mark all as seen
