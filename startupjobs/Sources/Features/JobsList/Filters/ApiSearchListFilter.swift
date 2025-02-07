@@ -4,12 +4,7 @@ import Observation
 import Combine
 
 @Observable
-class ApiSearchListFilter<SearchResultType: Decodable>: ListFilter, SearchableListFilter {
-    
-    @ObservationIgnored // Change if query needed in view
-    @Published var query: String = ""
-    private(set) var isSearching = false
-    
+class ApiSearchListFilter<SearchResultType: Decodable>: ListFilter {
     private let apiService: ApiServicing
     private let searchRouteProvider: (String) -> Route
     private let optionsParser: (SearchResultType) -> [FilterOption]
@@ -17,8 +12,6 @@ class ApiSearchListFilter<SearchResultType: Decodable>: ListFilter, SearchableLi
     override var previewOptions: [FilterOption] {
         options.filter { value.contains($0.key) }
     }
-    
-    private var cancellables = Set<AnyCancellable>()
     
     private var searchTask: Task<(), Never>?
     
@@ -38,34 +31,12 @@ class ApiSearchListFilter<SearchResultType: Decodable>: ListFilter, SearchableLi
             title: title,
             queryKey: queryKey,
             options: [],
-            value: value
+            value: value,
+            searchEnabled: true
         )
     }
     
-    override func onViewAppear() {
-        super.onViewAppear()
-        bindSearch()
-    }
-    
-    override func onViewDisappear() {
-        super.onViewDisappear()
-        cancellables = []
-    }
-}
-
-private extension ApiSearchListFilter {
-    func bindSearch() {
-        // TODO: Don't run search when we have results and query didn't change
-        $query
-            .debounce(for: 0.4, scheduler: DispatchQueue.main)
-            .removeDuplicates()
-            .sink { [weak self] value in
-                self?.search(query: value)
-            }
-        .store(in: &cancellables)
-    }
-    
-    func search(query: String) {
+    override func search(query: String) {
         searchTask?.cancel()
         
         searchTask = Task {

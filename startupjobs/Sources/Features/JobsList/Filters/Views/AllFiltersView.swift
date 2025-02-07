@@ -46,7 +46,7 @@ struct AllFiltersView: View {
             case let filter as ListFilter:
                 listPreview(filter: filter)
                 
-                if filter is (any SearchableListFilter) {
+                if filter.searchEnabled {
                     Button {
                         didTapSeeAll(filter)
                     } label: {

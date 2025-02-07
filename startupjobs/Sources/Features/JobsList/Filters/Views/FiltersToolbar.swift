@@ -76,7 +76,6 @@ private extension FiltersToolbar {
                     RoundedRectangle(cornerRadius: 16)
                 }
             }
-            
         }
         .tint(Colors.primary)
         .frame(maxWidth: 130)
@@ -92,8 +91,9 @@ private extension FiltersToolbar {
                 VStack {
                     Image(systemName: "slider.horizontal.3")
                         .tint(Colors.primary)
+                        .padding(.trailing, 10)
+                        .padding(.leading, 25)
                         .padding(.vertical, 10)
-                        .padding(.leading, 20)
                         .background(
                             LinearGradient(
                                 gradient: Gradient(

@@ -7,7 +7,7 @@ struct FilterWrapper: View {
     
     @ViewBuilder private var filterView: some View {
         switch filter {
-        case let filter as any SearchableListFilter:
+        case let filter as any SearchableListFilter where filter.searchEnabled:
             SearchableListFilterView(filter: filter)
         case let filter as ListFilter:
             ListFilterView(filter: filter)
@@ -59,6 +59,6 @@ struct FilterWrapper: View {
                 .init(key: "one", value: "Two"),
             ]
         ),
-        onDoneTapped: {
-        })
+        onDoneTapped: {}
+    )
 }

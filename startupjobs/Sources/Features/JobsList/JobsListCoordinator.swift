@@ -36,7 +36,12 @@ class JobsListCoordinator: NSObject, Coordinator {
     
     private lazy var filters: [any Filter] = {
         [
-            // TODO: TreeSearchListFilter
+            ListFilter(
+                title: "Area",
+                queryKey: "area",
+                options: AreaOptionsLoader().load(),
+                searchEnabled: true
+            ),
             ApiSearchListFilter(
                 apiService: apiService,
                 title: "Location",

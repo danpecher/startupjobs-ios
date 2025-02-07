@@ -23,6 +23,7 @@ Technologies used:
 - [x]  All filters sheet
 - [ ]  Tree filter (work area)
 - [ ]  Job detail
+- [ ]  Company detail w/ their jobs
 - [ ]  Refresh data if stale (view x new jobs)
 - [ ]  Group by date (Today, yesterday, etc.)
 - [ ]  Full screen tiktok style scroll (experimental) – switch between list / fullscreen

@@ -1,0 +1,734 @@
+[
+  {
+    "slug": "vyvoj",
+    "name": "Vývoj",
+    "children": [
+      {
+        "slug": "vyvoj/back-end",
+        "name": "Back-End",
+        "children": [
+          {
+            "slug": "vyvoj/back-end/java",
+            "name": "Java",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/php",
+            "name": "PHP",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/nodejs",
+            "name": "Node.js",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/net",
+            "name": ".NET",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/python",
+            "name": "Python",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/c-sharp",
+            "name": "C#",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/c-a-c-plus-plus",
+            "name": "C/C++",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/ruby",
+            "name": "Ruby",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/go",
+            "name": "Go",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/unity",
+            "name": "Unity",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/perl",
+            "name": "Perl",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/erlang",
+            "name": "Erlang",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/scala",
+            "name": "Scala",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/r",
+            "name": "R",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/rust",
+            "name": "Rust",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/f",
+            "name": "F#",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/back-end/kotlin",
+            "name": "Kotlin",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "vyvoj/front-end-koder",
+        "name": "Front-End/Kóder",
+        "children": [
+          {
+            "slug": "vyvoj/front-end-koder/html-css",
+            "name": "HTML/CSS",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/front-end-koder/javascript",
+            "name": "JavaScript",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/front-end-koder/typescript",
+            "name": "TypeScript",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "vyvoj/databaze",
+        "name": "Databáze",
+        "children": [
+          {
+            "slug": "vyvoj/databaze/sql",
+            "name": "SQL",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/databaze/mysql",
+            "name": "MySQL",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/databaze/oracle-pl-sql",
+            "name": "Oracle PL/SQL",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/databaze/postgresql",
+            "name": "PostgreSQL",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/databaze/ms-sql",
+            "name": "MS SQL",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/databaze/mongodb",
+            "name": "MongoDB",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "vyvoj/devops",
+        "name": "DevOps",
+        "children": [
+          {
+            "slug": "vyvoj/devops/helpdesk",
+            "name": "Helpdesk",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/devops/sprava-serveru",
+            "name": "Správa serverů",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/devops/integrace",
+            "name": "Integrace",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/devops/linux-admin",
+            "name": "Linux admin",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/devops/windows-admin",
+            "name": "Windows admin",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/devops/cloud-admin",
+            "name": "Cloud admin",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "vyvoj/testovani",
+        "name": "Testování",
+        "children": [
+          {
+            "slug": "vyvoj/testovani/manualni-testovani",
+            "name": "Manuální testování",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/testovani/automatizovane-testovani",
+            "name": "Automatizované testování",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/testovani/test-analytik",
+            "name": "Test analytik",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "vyvoj/mobilni-vyvoj",
+        "name": "Mobilní vývoj",
+        "children": [
+          {
+            "slug": "vyvoj/mobilni-vyvoj/android",
+            "name": "Android",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/mobilni-vyvoj/ios",
+            "name": "iOS",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/mobilni-vyvoj/xamarin",
+            "name": "Xamarin",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/mobilni-vyvoj/flutter",
+            "name": "Flutter",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/mobilni-vyvoj/react-native",
+            "name": "React Native",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "vyvoj/hardware-firmware",
+        "name": "Hardware & Firmware",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/it-security",
+        "name": "IT Security",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/software-architekt",
+        "name": "Software architekt",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/it-konzultant",
+        "name": "IT Konzultant",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/project-manager",
+        "name": "Project Manager",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/product-manager-a-product-owner",
+        "name": "Product Manager a Product Owner",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/scrum-master",
+        "name": "Scrum Master",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/design",
+        "name": "Design",
+        "children": [
+          {
+            "slug": "vyvoj/design/ux",
+            "name": "UX",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/design/ui",
+            "name": "UI",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/design/webdesign",
+            "name": "Webdesign",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/design/grafika",
+            "name": "Grafika",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/design/3d-grafika",
+            "name": "3D grafika",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/design/animation",
+            "name": "Animation",
+            "children": []
+          },
+          {
+            "slug": "vyvoj/design/product-design",
+            "name": "Product design",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "vyvoj/3d-tisk",
+        "name": "3D tisk",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/herni-vyvoj",
+        "name": "Herní vývoj",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/umela-inteligence",
+        "name": "Umělá inteligence (AI)",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/machine-learning",
+        "name": "Machine learning",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/virtualni-rozsirena-realita",
+        "name": "Virtuální / rozšířená realita (VR, AR)",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/internet-veci",
+        "name": "Internet věcí (IoT)",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/blockchain",
+        "name": "Blockchain",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/no-code",
+        "name": "No code",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/tech-writer",
+        "name": "Tech writer",
+        "children": []
+      },
+      {
+        "slug": "vyvoj/embedded-systems",
+        "name": "Embedded systems",
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "marketing-a-obchod",
+    "name": "Marketing a obchod",
+    "children": [
+      {
+        "slug": "marketing-a-obchod/marketing",
+        "name": "Marketing",
+        "children": [
+          {
+            "slug": "marketing-a-obchod/marketing/asistent-marketingu",
+            "name": "Asistent marketingu",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/brand-manager",
+            "name": "Brand Manager",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/cmo",
+            "name": "CMO",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/community-manager",
+            "name": "Community Manager",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/content-specialista",
+            "name": "Content specialista",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/copywriter",
+            "name": "Copywriter",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/e-mail-marketing",
+            "name": "E-mail marketing",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/event-manager",
+            "name": "Event Manager",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/marketingovy-analytik",
+            "name": "Marketingový analytik",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/marketingovy-konzultant",
+            "name": "Marketingový konzultant",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/marketing-manager",
+            "name": "Marketing Manager",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/marketingovy-specialista",
+            "name": "Marketingový specialista",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/ppc",
+            "name": "PPC",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/pr",
+            "name": "PR",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/rtb",
+            "name": "RTB",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/redaktor",
+            "name": "Redaktor",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/seo",
+            "name": "SEO",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/social-media",
+            "name": "Social Media",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/specialista-online-marketingu",
+            "name": "Specialista online marketingu",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/staz-v-marketingu",
+            "name": "Stáž v marketingu",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/marketing/sefredaktor",
+            "name": "Šéfredaktor",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "marketing-a-obchod/obchod",
+        "name": "Obchod",
+        "children": [
+          {
+            "slug": "marketing-a-obchod/obchod/account-manager",
+            "name": "Account Manager",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/obchod/zakaznicky-servis",
+            "name": "Zákaznický servis",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/obchod/obchodni-zastupce",
+            "name": "Obchodní zástupce",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/obchod/business-developer",
+            "name": "Business Developer",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/obchod/konzultant",
+            "name": "Konzultant",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "marketing-a-obchod/kreativa",
+        "name": "Kreativa",
+        "children": [
+          {
+            "slug": "marketing-a-obchod/kreativa/grafik",
+            "name": "Grafik",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/kreativa/product-designer",
+            "name": "Product designer",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/kreativa/flash-developer",
+            "name": "Flash Developer",
+            "children": []
+          },
+          {
+            "slug": "marketing-a-obchod/kreativa/foto-video-produkce",
+            "name": "Foto / Video / Produkce",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "analytika",
+    "name": "Analytika",
+    "children": [
+      {
+        "slug": "analytika/bi-business-analytik",
+        "name": "BI/Business Analytik",
+        "children": []
+      },
+      {
+        "slug": "analytika/data-analytik",
+        "name": "Data Analytik",
+        "children": []
+      },
+      {
+        "slug": "analytika/it-analytik",
+        "name": "IT Analytik",
+        "children": []
+      },
+      {
+        "slug": "analytika/webovy-analytik",
+        "name": "Webový analytik",
+        "children": []
+      },
+      {
+        "slug": "analytika/marketingovy-analytik",
+        "name": "Marketingový analytik",
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "management",
+    "name": "Management",
+    "children": [
+      {
+        "slug": "management/account-manager",
+        "name": "Account Manager",
+        "children": []
+      },
+      {
+        "slug": "management/business-development-manager",
+        "name": "Business Development Manager",
+        "children": []
+      },
+      {
+        "slug": "management/manager",
+        "name": "Manager",
+        "children": []
+      },
+      {
+        "slug": "management/marketing-manager",
+        "name": "Marketing Manager",
+        "children": []
+      },
+      {
+        "slug": "management/sales-manager",
+        "name": "Sales Manager",
+        "children": []
+      },
+      {
+        "slug": "management/scrum-master",
+        "name": "Scrum Master",
+        "children": []
+      },
+      {
+        "slug": "management/office-manager",
+        "name": "Office Manager",
+        "children": []
+      },
+      {
+        "slug": "management/product-manager-a-product-owner",
+        "name": "Product Manager a Product Owner",
+        "children": []
+      },
+      {
+        "slug": "management/project-manager",
+        "name": "Project Manager",
+        "children": []
+      },
+      {
+        "slug": "management/provozni-manazer",
+        "name": "Provozní manažer",
+        "children": []
+      },
+      {
+        "slug": "management/top-management-c-level",
+        "name": "Top management (C-level)",
+        "children": []
+      },
+      {
+        "slug": "management/team-leader",
+        "name": "Team Leader",
+        "children": []
+      },
+      {
+        "slug": "management/technicky-manazer",
+        "name": "Technický manažer",
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "administrativa-a-jine",
+    "name": "Administrativa a jiné",
+    "children": [
+      {
+        "slug": "administrativa-a-jine/administrativa",
+        "name": "Administrativa",
+        "children": [
+          {
+            "slug": "administrativa-a-jine/administrativa/office-manager",
+            "name": "Office Manager",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/administrativa/back-office",
+            "name": "Back Office",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/administrativa/zakaznicka-podpora",
+            "name": "Zákaznická podpora",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/administrativa/preklady",
+            "name": "Překlady",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/administrativa/recepcni",
+            "name": "Recepční",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/administrativa/nakup-a-logistika",
+            "name": "Nákup a logistika",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/administrativa/pravo",
+            "name": "Právo",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/administrativa/finance",
+            "name": "Finance",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/administrativa/ucetnictvi",
+            "name": "Účetnictví",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "administrativa-a-jine/hr",
+        "name": "HR",
+        "children": [
+          {
+            "slug": "administrativa-a-jine/hr/hr-generalista",
+            "name": "HR Generalista",
+            "children": []
+          },
+          {
+            "slug": "administrativa-a-jine/hr/recruiter",
+            "name": "Recruiter",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "administrativa-a-jine/lektor",
+        "name": "Lektor",
+        "children": []
+      },
+      {
+        "slug": "administrativa-a-jine/ostatni",
+        "name": "Ostatní",
+        "children": []
+      }
+    ]
+  },
+  {
+    "slug": "spoluzakladatel",
+    "name": "Spoluzakladatel",
+    "children": []
+  }
+]
