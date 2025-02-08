@@ -4,11 +4,11 @@ import NukeUI
 struct JobDetail: View {
     let listing: JobListing
     
-    private let viewModel: JobsListItemViewModel
+    private let viewModel: JobListingViewModel
     
     init(listing: JobListing) {
         self.listing = listing
-        self.viewModel = JobsListItemViewModel(listing: listing)
+        self.viewModel = JobListingViewModel(listing: listing)
     }
     
     var body: some View {

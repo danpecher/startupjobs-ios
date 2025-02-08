@@ -106,7 +106,9 @@ class JobsListCoordinator: NSObject, Coordinator {
         switch route {
         case .jobDetail(let listing):
             navigationController?.pushViewController(
-                UIHostingController(rootView: JobDetail(listing: listing)),
+                UIHostingController(
+                    rootView: JobDetail(listing: listing)
+                ),
                 animated: true
             )
         case .allFilters:

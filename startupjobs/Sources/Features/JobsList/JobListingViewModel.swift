@@ -1,4 +1,4 @@
-class JobsListItemViewModel {
+class JobListingViewModel {
     private(set) var listing: JobListing
     
     init(listing: JobListing) {

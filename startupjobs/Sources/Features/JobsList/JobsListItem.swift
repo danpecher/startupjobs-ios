@@ -2,7 +2,7 @@ import SwiftUI
 import NukeUI
 
 struct JobsListItem: View {
-    let viewModel: JobsListItemViewModel
+    let viewModel: JobListingViewModel
     
     var body: some View {
         HStack(alignment: .top) {
