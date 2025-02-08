@@ -6,7 +6,7 @@ import AppFramework
 
 class JobsListCoordinator: NSObject, Coordinator {
     enum Route {
-        case jobDetail(id: Int)
+        case jobDetail(listing: JobListing)
         case allFilters
     }
 
@@ -104,9 +104,9 @@ class JobsListCoordinator: NSObject, Coordinator {
     
     func navigate(to route: Route/*, presentation: ScreenPresentation*/) {
         switch route {
-        case .jobDetail(let id):
+        case .jobDetail(let listing):
             navigationController?.pushViewController(
-                UIHostingController(rootView: Text("Job detail: \(id)")),
+                UIHostingController(rootView: JobDetail(listing: listing)),
                 animated: true
             )
         case .allFilters:
@@ -170,8 +170,8 @@ private extension JobsListCoordinator {
     
     func handle(event: JobsListViewModel.Event) {
         switch event {
-        case let .didTapJobDetailButton(id):
-            navigate(to: .jobDetail(id: id))
+        case let .didTapJobDetailButton(listing):
+            navigate(to: .jobDetail(listing: listing))
         case .showAllFilters:
             navigate(to: .allFilters)
         }

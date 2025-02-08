@@ -17,4 +17,8 @@ struct Fonts {
         StartupJobsFontFamily.FunnelDisplay.bold.name,
         size: UIFontMetrics.default.scaledValue(for: 17)
     )
+    static let titleXL = Font.custom(
+        StartupJobsFontFamily.FunnelDisplay.bold.name,
+        size: UIFontMetrics.default.scaledValue(for: 22)
+    )
 }

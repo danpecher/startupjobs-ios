@@ -8,8 +8,6 @@ fileprivate struct Area: Decodable {
 
 class AreaOptionsLoader {
     func load() -> [FilterOption] {
-        let time = Date()
-        
         guard let fileUrl = Bundle.main.url(forResource: "areas", withExtension: "json") else {
             print("areas.json not found!")
             return []

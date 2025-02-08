@@ -63,7 +63,7 @@ struct JobsList: View {
     private func list(items: [JobListing]) -> some View {
         ForEach(items, id: \.id) { job in
             Button {
-                viewModel.openJobDetail(id: job.id)
+                viewModel.openJobDetail(job)
             } label: {
                 VStack {
                     JobsListItem(

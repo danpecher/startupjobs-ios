@@ -21,8 +21,8 @@ Technologies used:
 - [x]  Display active filters (work mode / location / salary / stack / seniority / contract type / startups / benefits)
 - [x]  Load dynamic filter values from api
 - [x]  All filters sheet
-- [ ]  Tree filter (work area)
-- [ ]  Job detail
+- [x]  Tree filter (work area)
+- [x]  Job detail
 - [ ]  Company detail w/ their jobs
 - [ ]  Refresh data if stale (view x new jobs)
 - [ ]  Group by date (Today, yesterday, etc.)

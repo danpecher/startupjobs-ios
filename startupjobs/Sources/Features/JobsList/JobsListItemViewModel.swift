@@ -1,5 +1,5 @@
 class JobsListItemViewModel {
-    let listing: JobListing
+    private(set) var listing: JobListing
     
     init(listing: JobListing) {
         self.listing = listing

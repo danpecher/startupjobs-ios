@@ -28,12 +28,13 @@ struct JobsListItem: View {
                 HStack {
                     Text(viewModel.listing.company)
                         .font(Fonts.regular)
-                    
                 }
+                
                 Text(viewModel.listing.name)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(4)
                     .font(Fonts.title)
+                
                 Text(viewModel.info)
                     .font(Fonts.regular)
                     .foregroundStyle(Color.gray)
