@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct JobDetailDescription: View {
+struct HTMLDescription: View {
     @Environment(\.self) var environment
     
     let content: String
@@ -49,6 +49,14 @@ struct JobDetailDescription: View {
         
                 ul {
                     padding-left: 12pt;
+                }
+                
+                img, video, iframe {
+                    max-width: 100%;
+                }
+        
+                video {
+                    object-fit: fit;
                 }
             </style>
         </head>

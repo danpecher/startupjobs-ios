@@ -7,6 +7,8 @@ enum AppRoutes: Route {
         filters: [QueryPair] = []
     )
     
+    case jobOffer(id: Int)
+    case companyDetail(slug: String)
     case locationSearch(query: String)
     case companySearch(query: String)
     case techSearch(query: String)
@@ -21,6 +23,10 @@ enum AppRoutes: Route {
             "api/front/companies"
         case .techSearch:
             "search/technological-tags"
+        case .jobOffer(let id):
+            "api/front/offer/\(id)"
+        case .companyDetail(let slug):
+            "api/front/company/\(slug)"
         }
     }
     
@@ -58,12 +64,18 @@ enum AppRoutes: Route {
                 URLQueryItem(name: "name", value: query),
                 URLQueryItem(name: "including", value: "react-js,python,java,php,javascript,sql") // default hardcoded set
             ]
+        case .jobOffer:
+            return [
+                URLQueryItem(name: "locale", value: "cs")
+            ]
+        case .companyDetail:
+            return nil
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .jobsList, .locationSearch, .companySearch, .techSearch:
+        case .jobsList, .locationSearch, .companySearch, .techSearch, .jobOffer, .companyDetail:
                 .get
         }
     }

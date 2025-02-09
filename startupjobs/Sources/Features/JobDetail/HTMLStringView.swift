@@ -15,7 +15,7 @@ struct HTMLStringView: UIViewRepresentable {
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             webView.evaluateJavaScript("document.body.scrollHeight") { [weak self] result, error in
-                self?.contentHeight = (result as? CGFloat ?? 0)
+                self?.contentHeight = (result as? CGFloat ?? 0) + 20
             }
         }
     }

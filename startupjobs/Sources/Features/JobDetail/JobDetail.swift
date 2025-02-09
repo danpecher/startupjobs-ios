@@ -2,68 +2,77 @@ import SwiftUI
 import NukeUI
 
 struct JobDetail: View {
-    let listing: JobListing
+    let viewModel: JobDetailViewModel
     
-    private let viewModel: JobListingViewModel
-    
-    init(listing: JobListing) {
-        self.listing = listing
-        self.viewModel = JobListingViewModel(listing: listing)
-    }
+    @State private var opacity = 0.0
     
     var body: some View {
         ScrollView {
             VStack {
                 HStack(alignment: .top, spacing: 24) {
                     VStack(spacing: 10) {
-                        Text(listing.company)
+                        Text(viewModel.listing.company)
                             .font(Fonts.regular)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        Text(listing.name)
+                        Text(viewModel.listing.name)
                             .font(Fonts.titleXL)
                             .fixedSize(horizontal: false, vertical: true)
                             .lineLimit(4)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
-                        Text(viewModel.info)
+                        Text(JobListingFormatter.info(viewModel.listing))
                             .font(Fonts.note)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     
-                    LazyImage(url: listing.imageUrl, content: { state in
-                        if let image = state.image {
-                            image.resizable()
-                                .scaledToFit()
-                                .transition(.opacity)
-                                .aspectRatio(contentMode: .fit)
+                    Button {
+                        viewModel.didTapCompany()
+                    } label: {
+                        LazyImage(url: viewModel.listing.imageUrl, content: { state in
+                            if let image = state.image {
+                                image.resizable()
+                                    .scaledToFit()
+                                    .transition(.opacity)
+                                    .aspectRatio(contentMode: .fit)
+                            }
+                        })
+                        .frame(width: 64, height: 64)
+                        .padding(6)
+                        .background(Colors.logoBackground)
+                        .cornerRadius(10)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 10)
+                                .strokeBorder(Color(uiColor: .systemGray5), lineWidth: 1)
                         }
-                    })
-                    .frame(width: 64, height: 64)
-                    .padding(6)
-                    .background(Colors.logoBackground)
-                    .cornerRadius(10)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 10)
-                            .strokeBorder(Color(uiColor: .systemGray5), lineWidth: 1)
                     }
                 }
                 
-                JobDetailDescription(content: listing.description)
+                HTMLDescription(content: viewModel.listing.description)
             }
             .padding(16)
         }
+        .opacity(opacity)
         .scrollIndicators(.never)
+        .task {
+            withAnimation(.easeIn) {
+                opacity = 1
+            }
+            await viewModel.load()
+        }
     }
 }
 
 #Preview {
     JobDetail(
-        listing: try! JSONDecoder().decode(
-            ApiResult<[JobListing]>.self,
-            from: try! Data(
-                contentsOf: Bundle.main.url(forResource: "cachedjobs", withExtension: "json")!
-            )
-        ).resultSet.first!
+        viewModel: .init(
+            listing: try! JSONDecoder().decode(
+                ApiResult<[JobListing]>.self,
+                from: try! Data(
+                    contentsOf: Bundle.main.url(forResource: "cachedjobs", withExtension: "json")!
+                )
+            ).resultSet.first!,
+            apiService: PreviewApiService(previewData: "".data(using: .utf8))
+        )
     )
 }

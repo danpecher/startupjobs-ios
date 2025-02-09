@@ -1,21 +1,15 @@
-class JobListingViewModel {
-    private(set) var listing: JobListing
-    
-    init(listing: JobListing) {
-        self.listing = listing
-    }
-    
-    var info: String {
+class JobListingFormatter {
+    static func info(_ listing: JobListing) -> String {
         [
             listing.locations,
             listing.isRemote ? "Remote" : nil,
-            formattedSalary
+            formattedSalary(listing)
         ]
             .compactMap { $0 }
             .joined(separator: " • ")
     }
     
-    private var formattedSalary: String? {
+    private static func formattedSalary(_ listing: JobListing) -> String? {
         guard let salary = listing.salary else {
             return nil
         }

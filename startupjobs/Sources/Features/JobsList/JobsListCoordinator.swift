@@ -7,6 +7,7 @@ import AppFramework
 class JobsListCoordinator: NSObject, Coordinator {
     enum Route {
         case jobDetail(listing: JobListing)
+        case companyDetail(slug: String)
         case allFilters
     }
 
@@ -105,9 +106,34 @@ class JobsListCoordinator: NSObject, Coordinator {
     func navigate(to route: Route/*, presentation: ScreenPresentation*/) {
         switch route {
         case .jobDetail(let listing):
+            let viewModel = JobDetailViewModel(listing: listing, apiService: apiService)
+            
+            viewModel.events.sink { [weak self] event in
+                self?.handle(event: event)
+            }
+            .store(in: &cancellables)
+            
             navigationController?.pushViewController(
                 UIHostingController(
-                    rootView: JobDetail(listing: listing)
+                    rootView: JobDetail(
+                        viewModel: viewModel
+                    )
+                    .background(Colors.backgroundPrimary)
+                ),
+                animated: true
+            )
+        case .companyDetail(let slug):
+            navigationController?.pushViewController(
+                UIHostingController(
+                    rootView: CompanyDetail(
+                        viewModel: .init(
+                            companySlug: slug,
+                            apiService: apiService
+                        ) { [weak self] listing in 
+                            self?.navigate(to: .jobDetail(listing: listing))
+                        }
+                    )
+                    .background(Colors.backgroundPrimary)
                 ),
                 animated: true
             )
@@ -176,6 +202,13 @@ private extension JobsListCoordinator {
             navigate(to: .jobDetail(listing: listing))
         case .showAllFilters:
             navigate(to: .allFilters)
+        }
+    }
+    
+    func handle(event: JobDetailViewModel.Event) {
+        switch event {
+        case .didTapCompany(let slug):
+            navigate(to: .companyDetail(slug: slug))
         }
     }
     

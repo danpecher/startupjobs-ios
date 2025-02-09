@@ -67,9 +67,7 @@ struct JobsList: View {
             } label: {
                 VStack {
                     JobsListItem(
-                        viewModel: .init(
-                            listing: job
-                        )
+                        listing: job
                     )
                     .padding(.horizontal, 12)
                     .padding(.vertical, 10)
